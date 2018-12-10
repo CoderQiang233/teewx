@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "福玉茶叶",
+  "usingComponents": {
+    "i-icon": "../../dist/icon/index"
+  }
+}

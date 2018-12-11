@@ -1,54 +1,60 @@
-view{
+view {
   box-sizing: border-box;
 }
-page{
+
+page {
   background: #f2f2f2;
 }
-.header{
+
+.header {
   width: 100vw;
   height: 210rpx;
-  background: linear-gradient(to right, #2d2f3f , #4e5161);
+  background: linear-gradient(to right, #2d2f3f, #4e5161);
   padding-left: 30rpx;
   padding-right: 20rpx;
-  
 }
-.header_top{
+
+.header_top {
   width: 100%;
   height: 136rpx;
-  border-bottom: 2rpx solid rgba(112,112,112,0.8);
+  border-bottom: 2rpx solid rgba(112, 112, 112, 0.8);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   padding-top: 20rpx;
   position: relative;
-
 }
-.person_head{
+
+.person_head {
   width: 86rpx;
   height: 86rpx;
   border-radius: 50%;
   background: red;
   margin-right: 30rpx;
 }
-.person_info{
+
+.person_info {
   font-size: 28rpx;
   height: 86rpx;
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
 }
-.person_name{
+
+.person_name {
   color: white;
   width: 100%;
 }
-.current_shop{
+
+.current_shop {
   color: #ababab;
   width: 100%;
 }
-.person_level_box{
+
+.person_level_box {
   width: 220rpx;
   height: 60rpx;
-  background: rgba(201,139,42,0.3);
+  background: rgba(201, 139, 42, 0.3);
   position: absolute;
   right: -30rpx;
   top: 34%;
@@ -57,32 +63,37 @@ page{
   flex-wrap: wrap;
   align-items: center;
 }
-.person_level_image{
+
+.person_level_image {
   width: 24rpx;
   height: 24rpx;
   margin-left: 30rpx;
 }
-.person_level_name{
+
+.person_level_name {
   font-size: 24rpx;
   color: white;
   width: 156rpx;
   text-align: center;
   line-height: 24rpx;
 }
-.header_bottom{
+
+.header_bottom {
   width: 100%;
   height: 74rpx;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.header_bottom_text{
+
+.header_bottom_text {
   font-size: 28rpx;
   color: #cfcece;
   height: 74rpx;
   line-height: 74rpx;
 }
-.header_bottom_right{
+
+.header_bottom_right {
   color: white;
   font-size: 50rpx;
   height: 74rpx;
@@ -90,16 +101,17 @@ page{
   align-items: center;
   padding-bottom: 15rpx;
 }
-.num_section{
+
+.num_section {
   width: 100vw;
   height: 220rpx;
   background: white;
   display: flex;
   flex-wrap: wrap;
   padding: 30rpx 0;
-
 }
-.num_section_content{
+
+.num_section_content {
   width: 25%;
   height: 100%;
   display: flex;
@@ -108,16 +120,17 @@ page{
   font-size: 36rpx;
   font-weight: 600;
 }
-.num_section_content .num{
+
+.num_section_content .num {
   color: red;
   width: 100%;
   height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
-.num_section_content .text{
+
+.num_section_content .text {
   color: black;
   width: 100%;
   height: 50%;
@@ -125,7 +138,8 @@ page{
   align-items: center;
   justify-content: center;
 }
-.person_order{
+
+.person_order {
   width: 100vw;
   height: 100rpx;
   background: white;
@@ -136,39 +150,45 @@ page{
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.person_order .left{
+
+.person_order .left {
   width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
 }
-.person_order .icon{
+
+.person_order .icon {
   width: 60rpx;
   height: 100%;
   line-height: 100%;
   display: flex;
   align-items: center;
 }
-.person_order .left_text{
+
+.person_order .left_text {
   font-size: 32rpx;
-  color: black; 
+  color: black;
   height: 100%;
   display: flex;
   align-items: center;
 }
-.person_order .right{
+
+.person_order .right {
   height: 100%;
   display: flex;
   align-items: center;
 }
-.person_order .right .right_text{
+
+.person_order .right .right_text {
   font-size: 32rpx;
-  color: #212121; 
+  color: #212121;
   height: 100%;
   display: flex;
   align-items: center;
 }
-.person_order .right .icon{
+
+.person_order .right .icon {
   width: 50rpx;
   height: 100%;
   line-height: 100%;
@@ -176,7 +196,8 @@ page{
   align-items: center;
   justify-content: flex-end;
 }
-.button_section{
+
+.button_section {
   width: 100vw;
   height: 180rpx;
   background: white;
@@ -185,7 +206,8 @@ page{
   align-items: center;
   justify-content: space-between;
 }
-.button_section_content{
+
+.button_section_content {
   width: 25%;
   height: 100%;
   display: flex;
@@ -194,44 +216,47 @@ page{
   align-items: center;
   padding: 20rpx 0;
 }
-.button_section_content .img{
+
+.button_section_content .img {
   width: 72rpx;
   height: 66rpx;
-  
 }
-.button_section_content .title{
+
+.button_section_content .title {
   width: 100%;
   font-size: 32rpx;
   text-align: center;
 }
-.person_address{
+
+.person_address {
   width: 100vw;
   height: 120rpx;
   overflow: hidden;
   padding: 16rpx 0;
-
 }
-.person_address_box{
+
+.person_address_box {
   width: 100%;
   height: 88rpx;
   background: white;
   padding: 0 20rpx 0 30rpx;
   display: flex;
   justify-content: space-between;
-  
-
 }
-.person_address_box .left{
+
+.person_address_box .left {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
 }
-.person_address_box .left .icon{
+
+.person_address_box .left .icon {
   display: flex;
   align-items: center;
   line-height: 100%;
 }
-.person_address_box .left .title{
+
+.person_address_box .left .title {
   height: 100%;
   font-size: 32rpx;
   display: flex;
@@ -239,24 +264,27 @@ page{
   margin-left: 10rpx;
 }
 
-.person_address_box .right{
+.person_address_box .right {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
   line-height: 100%;
   align-items: center;
 }
-.profit{
+
+.profit {
   width: 100vw;
   background: white;
 }
-.profit .top{
+
+.profit .top {
   width: 100%;
   height: 180rpx;
   border-bottom: 2rpx solid #b5b5b5;
   padding: 16rpx 0;
 }
-.profit .top .top_top{
+
+.profit .top .top_top {
   width: 100%;
   height: calc(100% / 3);
   font-size: 30rpx;
@@ -265,7 +293,8 @@ page{
   align-items: center;
   justify-content: center;
 }
-.profit .top .top_middle{
+
+.profit .top .top_middle {
   width: 100%;
   height: calc(100% / 3);
   font-size: 34rpx;
@@ -275,7 +304,8 @@ page{
   justify-content: center;
   font-weight: 600;
 }
-.profit .top .top_bottom{
+
+.profit .top .top_bottom {
   width: 100%;
   height: calc(100% / 3);
   font-size: 28rpx;
@@ -284,7 +314,8 @@ page{
   align-items: center;
   justify-content: center;
 }
-.profit .middle{
+
+.profit .middle {
   width: 100%;
   height: 190rpx;
   border-bottom: 2rpx solid #b5b5b5;
@@ -292,12 +323,24 @@ page{
   display: flex;
   flex-wrap: wrap;
 }
-.profit .middle .middle_left{
+
+.profit .middle .middle_left {
   width: 50%;
   height: 100%;
   border-right: 2rpx solid #707070;
 }
-.tuiguang{
+
+.tuiguang {
+  width: 100%;
+  height: calc(100% / 3);
+  font-size: 28rpx;
+  color: #373737;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tuiguang_num {
   width: 100%;
   height: calc(100% / 3);
   font-size: 30rpx;
@@ -305,27 +348,158 @@ page{
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.tuiguang_num{
-  width: 100%;
-  height: calc(100% / 3);
-  font-size: 34rpx;
-  color: #373737;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-weight: 600;
 }
-.tuiguang_wait{
+
+.tuiguang_wait {
   width: 100%;
   height: calc(100% / 3);
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: #525252;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.profit .middle .middle_right{
+
+.profit .middle .middle_right {
   width: 50%;
   height: 100%;
+}
+
+.profit .bottom {
+  width: 100vw;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx 0 30rpx;
+}
+
+.profit_bottom_left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #212121;
+}
+
+.profit_bottom_right {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.profit_bottom_right .right_text {
+  font-size: 28rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.profit_bottom_right .icon {
+  font-size: 28rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.extension {
+  width: 100vw;
+  height: 200rpx;
+  background: white;
+  margin-top: 16rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50rpx 0;
+}
+
+.extension_list {
+  width: calc(100% /3);
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.extension_list_top {
+  width: 100%;
+  font-size: 36rpx;
+  color: #38f;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.extension_list_bottom {
+  width: 100%;
+  font-size: 28rpx;
+  color: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_section {
+  width: 100vw;
+  height: 146rpx;
+  background: white;
+  margin-top: 16rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.card_img {
+  width: 220rpx;
+  height: 106rpx;
+}
+
+.wenti {
+  width: 100vw;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx 0 30rpx;
+  background: white;
+  margin-top: 16rpx;
+}
+
+.footer {
+  width: 100vw;
+  height: 100rpx;
+  display: flex;
+  align-items: flex-end;
+}
+
+.ftb_box {
+  width: 100%;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+}
+.small_bt{
+  padding: 0 10rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  border-right: 1rpx solid #212121;
+}
+.small_bt:last-child{
+  border: none;
+}
+.footer_img{
+  width: 100vw;
+  height: 200rpx;
+  margin-top: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 200rpx;
+}
+.foot_img{
+  width: 426rpx;
+  height: 336rpx;
 }

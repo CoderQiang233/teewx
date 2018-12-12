@@ -1,5 +1,5 @@
 //app.js
-var bpath = 'http://localhost/Public/ntsdmember/';
+var bpath = 'http://localhost/Public/weixin/';
 var imagepath = "http://localhost/Public/upload";
 App({
   onLaunch: function () {
@@ -10,9 +10,7 @@ App({
 
     wx.login({
       success: function (res) {
-        console.log(res.code)
         if (res.code) {
-          console.log(res.code)
           //发起网络请求
           wx.request({
             url: bpath,
@@ -21,7 +19,6 @@ App({
               code: res.code
             },
             success: function (res) {
-              console.log('wxlogin', res)
               var data = res.data
 
               if (data.ret == 200 && data.data.code == 0) {
@@ -68,4 +65,5 @@ App({
     userInfo: null
   },
   basePath: bpath,
+  imagepath
 })

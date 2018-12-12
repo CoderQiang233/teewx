@@ -19,3 +19,31 @@
 .usermotto {
   margin-top: 200px;
 }
+.scroll{
+  height: 30%;
+width: 100%;
+}
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+.indexImg{
+  width: 100%
+}
+.indexImg image{
+  width: 100%;
+}
+.indexSinglePro{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0rpx 30rpx 20rpx 30rpx
+}
+.indexContent{
+  width: 100%;
+ background-size: contain
+}

@@ -1,0 +1,11 @@
+/* components/indexImg/indexImg.wxss */
+.indexProduct{
+  width: 100%;
+}
+.indexProductImg{
+ width: 100%
+ 
+}
+.test{
+  width: 100%
+}

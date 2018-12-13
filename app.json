@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/PersonalCenter/PersonalCenter"
+    "pages/PersonalCenter/PersonalCenter",
+    "components/categoryProducts/categoryProducts"
   ],
   "window": {
     "backgroundTextStyle": "light",

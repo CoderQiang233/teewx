@@ -1,0 +1,10 @@
+{
+
+  "navigationBarTitleText": "编辑地址",
+  "usingComponents": {
+    "i-switch": "../../dist/switch/index",
+    "i-icon": "../../dist/icon/index"
+  }
+  
+  
+}

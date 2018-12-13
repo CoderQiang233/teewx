@@ -36,12 +36,43 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
 					"name": "个人中心",
-					"pathName": "pages/PersonalCenter/PersonalCenter"
+					"pathName": "pages/PersonalCenter/PersonalCenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单列表页",
+					"pathName": "pages/OrderList/OrderList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提交订单页",
+					"pathName": "pages/PlaceOrder/PlaceOrder",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "支付成功页",
+					"pathName": "pages/PayResult/PayResult",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址列表页",
+					"pathName": "pages/AddressList/AddressList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑地址",
+					"pathName": "pages/NewAddress/NewAddress",
+					"query": ""
 				}
 			]
 		}

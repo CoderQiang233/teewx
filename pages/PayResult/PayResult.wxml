@@ -1,0 +1,23 @@
+
+<!-- 支付成功 -->
+<block wx:if="{{PayStatus==true}}">
+<view class='icon_box' >
+  <icon type="success" size="80" color="rgb(10, 186, 7)" />
+</view>
+<view class='pay_title'>支付成功</view>
+<view class='pay_button_box'>
+  <view class='pay_button1'>查看订单</view>
+  <view class='pay_button2'>返回首页</view>
+</view>
+</block>
+<!-- 支付失败 -->
+<block wx:if="{{PayStatus==false}}">
+<view class='icon_box' wx:if="{{PayStatus==false}}">
+  <icon type="clear" size="80" color="rgb(254, 0, 0)" />
+</view>
+<view class='pay_title2'>支付失败</view>
+<view class='pay_button_box'>
+  <view class='pay_button1'>重新支付</view>
+  <view class='pay_button2'>返回首页</view>
+</view>
+</block>

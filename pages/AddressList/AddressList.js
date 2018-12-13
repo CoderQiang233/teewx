@@ -1,18 +1,22 @@
-// pages/PersonalCenter/PersonalCenter.js
+// pages/AddressList/AddressList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // wx.chooseAddress({
+    //   success(res){
+    //     console.log(res);
+    //   }
+    // })
   },
 
   /**
@@ -27,12 +31,6 @@ Page({
    */
   onShow: function () {
 
-  },
-//查看全部订单跳转订单列表页
-  ToOderList(){
-    wx.navigateTo({
-      url: '/pages/OrderList/OrderList',
-    })
   },
 
   /**

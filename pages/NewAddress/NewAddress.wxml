@@ -1,0 +1,26 @@
+<view class="edit_box">
+  <input class='name' placeholder='收货人姓名'></input>
+  <input class='name' placeholder='手机号' type="number" maxlength='11'></input>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      {{region[0]}} {{region[1]}} {{region[2]}}
+      <view class='picker_placeholder'>(请选择乡镇/街道)</view>
+    </view>
+  </picker>
+
+  <input class='name' placeholder='详细地址'></input>
+
+  <view class='button_box'>
+    <view class='button_left'>
+    <view class='button_left_text'>设为默认地址：</view>
+      <i-switch  value="{{switch1}}" bind:change="onChange" slot="footer" size="small">
+        <!-- <i-icon type="right" slot="open"></i-icon>
+        <i-icon type="close" slot="close"></i-icon> -->
+        <view slot="open">是</view>
+        <view slot="close">否</view>
+      </i-switch>
+      
+    </view>
+  </view>
+
+</view>

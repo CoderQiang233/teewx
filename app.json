@@ -2,7 +2,13 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/PersonalCenter/PersonalCenter"
+    "pages/PersonalCenter/PersonalCenter",
+    "pages/OrderList/OrderList",
+    "pages/PlaceOrder/PlaceOrder",
+    "pages/PayResult/PayResult",
+    "pages/AddressList/AddressList",
+    "pages/NewAddress/NewAddress"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,11 +1,12 @@
-// pages/PersonalCenter/PersonalCenter.js
+// pages/NewAddress/NewAddress.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    region: ['北京市', '北京市', '东城区'],
+    switch1: 0,
   },
 
   /**
@@ -28,11 +29,24 @@ Page({
   onShow: function () {
 
   },
-//查看全部订单跳转订单列表页
-  ToOderList(){
-    wx.navigateTo({
-      url: '/pages/OrderList/OrderList',
+
+  //省市区选择器选择方法
+  bindRegionChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    console.log(e)
+    this.setData({
+      region: e.detail.value
     })
+  },
+  //默认地址开关
+  onChange(event) {
+    const detail = event.detail;
+    this.setData({
+      'switch1': detail.value
+    })
+  },
+  switch1Change(e) {
+    console.log('switch1 发生 change 事件，携带值为', e.detail.value)
   },
 
   /**

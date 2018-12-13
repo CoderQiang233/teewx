@@ -35,7 +35,7 @@
     <view class='text'>券</view>
   </view>
 </view>
-<view class='person_order'>
+<view class='person_order' bindtap='ToOderList'>
   <view class='left'>
     <view class='icon'>
       <i-icon type="activity" size="20" color="#80848f" />

@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.1",
 	"appid": "wx6084b273399ab0d4",
-	"projectname": "weixin",
+	"projectname": "teastore",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -27,13 +27,29 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "手机验证码",
+					"pathName": "pages/phonetest/phonetest"
+				}
+			]
 		}
 	}
 }

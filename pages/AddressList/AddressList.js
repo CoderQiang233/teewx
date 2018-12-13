@@ -20,6 +20,9 @@ Page({
   },
   editorAddress:function(){
     console.log("修改地址")
+    wx.navigateTo({
+      url: '../NewAddress/NewAddress',
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

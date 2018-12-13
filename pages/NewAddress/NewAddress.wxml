@@ -1,6 +1,6 @@
 <view class="edit_box">
-  <input class='name' placeholder='收货人姓名'></input>
-  <input class='name' placeholder='手机号' type="number" maxlength='11'></input>
+  <input class='name' placeholder='收货人姓名' bindinput='name_input'></input>
+  <input class='name' placeholder='手机号' type="number" maxlength='11' bindinput='tel_input'></input>
   <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
     <view class="picker">
       {{region[0]}} {{region[1]}} {{region[2]}}
@@ -8,7 +8,7 @@
     </view>
   </picker>
 
-  <input class='name' placeholder='详细地址'></input>
+  <input class='name' placeholder='详细地址' bindinput='detailAddress_input'></input>
 
   <view class='button_box'>
     <view class='button_left'>

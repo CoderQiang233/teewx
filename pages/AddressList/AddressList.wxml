@@ -16,7 +16,7 @@
       </view>
 
     </view>
-    <view class='address_list_right'>
+    <view class='address_list_right' bindtap='editorAddress'>
       <i-icon type="editor" size="24" color="#8c8c8c" />
     </view>
   </view>
@@ -24,7 +24,7 @@
 </view>
 <!-- 底部按钮 -->
 <view class='button_box'>
-  <view class='add_address'>+新建地址</view>
+  <view class='add_address' bindtap='editorAddress'>+新建地址</view>
   <view class='add_address2'>
     <image src='../../images/Address/weixinicon.png'></image>
     一键导入微信地址

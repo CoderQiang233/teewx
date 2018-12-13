@@ -5,10 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //收货地址
     region: ['北京市', '北京市', '东城区'],
     switch1: 0,
+    name:'',
+    phone:'',
+    address:'',
+    detailAddress:''
   },
+  //获取收货人姓名
+  name_input:function(e){
+ 
+   this.data.name =e.detail.value;
+    console.log(this.data.name);
+  },
+  //获取手机号
+  tel_input: function (e) {
 
+    this.data.phone = e.detail.value;
+    console.log(this.data.phone);
+  },
+  //获得详细地址
+  detailAddress_input:function(e){
+     this.data.detailAddress=e.detail.value
+    console.log(this.data.detailAddress);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -44,6 +65,12 @@ Page({
     this.setData({
       'switch1': detail.value
     })
+    console.log(this.data.switch1)
+     if(this.data.switch1== false){
+       console.log("不设置为默认地址")
+     }else{
+       console.log("设置为默认地址")
+     }
   },
 
 

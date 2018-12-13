@@ -1,0 +1,67 @@
+/**index.wxss**/
+page{
+  /* background-color: rgb(237, 236, 232) */
+}
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* .userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+} */
+
+/* .userinfo-nickname {
+  color: #aaa;
+} */
+
+/* .usermotto {
+  margin-top: 200px;
+} */
+.joinstore{
+  color: white;
+  background-color: rgb(180, 40, 45);
+  width: 650rpx;
+  margin-top: 200rpx
+  
+}
+.phone{
+  
+  border-bottom: 1px solid rgba(91, 91, 236,0.5);
+  width: 600rpx;
+  height: 80rpx;
+  /* text-align: center; */
+  font-size: 28rpx
+}
+.content{
+  display: flex;
+  border-bottom: 1px solid rgba(91, 91, 236,0.5);
+}
+.yzm{
+  /* border-bottom: 1px solid rgba(91, 91, 236,0.5); */
+  width: 410rpx;
+  height: 80rpx;
+  text-align: left;
+  font-size: 28rpx
+  /* margin-left: -200rpx */
+}
+.getyzm{
+
+  border: 0.5rpx solid rgb(8, 8, 8);
+  height: 60rpx;
+  width: 100rpx;
+  font-size: 30rpx;
+  /* padding: 18rpx; */
+  /* margin-top:10rpx; */
+  /* padding-top:5rpx  */
+
+}
+
+.img{
+  width: 90%;
+  margin: 60rpx
+}

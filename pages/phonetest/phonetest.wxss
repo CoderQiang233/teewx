@@ -1,0 +1,40 @@
+/* pages/phonetest/phonetest.wxss */
+page{
+   /* background-color: rgb(237, 236, 232) */
+}
+.app_img{
+  width: 30%;
+  height: 30%;
+ margin: 160rpx 200rpx 100rpx 280rpx
+}
+.li_window{
+  margin: 40rpx;
+
+}
+.tel_input{
+    height: 80rpx;
+    border-bottom:0.1rpx solid gainsboro ;
+    font-size: 28rpx;
+}
+.code{
+   display: flex;
+   border-bottom:0.1rpx solid gainsboro ;
+}
+.code_input{
+      height: 120rpx;
+      font-size: 28rpx;
+}
+
+.get_code{
+  font-size: 30rpx;
+ height: 80rpx;
+ margin-top: 20rpx;
+ margin-left: 120rpx;
+ width: 200rpx
+}
+
+.commite{
+  margin-top: 80rpx;
+  background-color: rgb(180, 40, 45);
+  color: white;
+}

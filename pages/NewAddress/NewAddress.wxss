@@ -61,3 +61,17 @@
   height: 40rpx;
   margin-right: 6rpx;
 }
+.baocun{
+  width: 100vw;
+  height: 80rpx;
+  background: #B23032;
+  color: white;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 6rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

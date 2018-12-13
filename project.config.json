@@ -1,5 +1,5 @@
 {
-	"description": "项目配置文件",
+	"description": "项目配置文件。",
 	"packOptions": {
 		"ignore": []
 	},
@@ -14,10 +14,12 @@
 	"libVersion": "2.4.1",
 	"appid": "wx6084b273399ab0d4",
 	"projectname": "teastore",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
+	"svr": "",
+	"client": "",
+	"qcloudRoot": "",
+	"miniprogramRoot": "",
+	"pluginRoot": "",
+	"scripts": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -32,11 +34,10 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -47,7 +48,13 @@
 				{
 					"id": -1,
 					"name": "手机验证码",
-					"pathName": "pages/phonetest/phonetest"
+					"pathName": "pages/phonetest/phonetest",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址列表",
+					"pathName": "pages/AddressList/AddressList"
 				}
 			]
 		}

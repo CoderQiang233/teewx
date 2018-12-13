@@ -1,31 +1,31 @@
 //app.js
 var bpath = 'http://localhost/Public/weixin/';
+
 var imagepath = "http://localhost/Public/upload/";
+
+var imagepath = "http://localhost/Public/upload";
 App({
   onLaunch: function () {
     // 展示本地存储能力
     // var logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())
     // wx.setStorageSync('logs', logs)
-
     wx.login({
       success: function (res) {
-        console.log(res.code)
         if (res.code) {
-          console.log(res.code)
           //发起网络请求
           wx.request({   
             url: bpath,
             data: {
               service: 'WechatMini_WXLoginHelper.checkLogin',
               code: res.code
-            },
-
-            
+            },           
             success: function (res) {
+
               wx.setStorageSync('openid', res.data.data.openid)
               console.log('wxlogin--', wx.getStorageSync('openid'))
               console.log(res)
+
               var data = res.data
 
               if (data.ret == 200 && data.data.code == 0) {
@@ -41,9 +41,7 @@ App({
             }
           })
         } else {
-
           console.log('获取用户登录态失败！' + res.errMsg)
-
         }
       }
     });
@@ -71,7 +69,9 @@ App({
   globalData: {
     userInfo: null
   },
-   basePath: bpath,
+ basePath: bpath,
 
-  
+  basePath: bpath,
+  imagepath
+
 })

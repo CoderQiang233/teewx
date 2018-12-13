@@ -44,6 +44,7 @@ Page({
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
+          console.log(res)
           app.globalData.userInfo = res.userInfo
           this.setData({
             userInfo: res.userInfo,
@@ -54,7 +55,7 @@ Page({
     }
   },
   getUserInfo: function(e) {
-
+   
     wx.setStorageSync('userMessage', e.detail.userInfo)
     var that =this;
     

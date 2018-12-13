@@ -1,13 +1,26 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class="container" >
+  <!-- //滑动试图  ScrollView -->
+  <view class='scroll'>
+    <!--index.wxml-->
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+      <block wx:for="{{banner}}" wx:for-index="index">
+        <swiper-item>
+          <image src="{{imagepath + item.path}}" class="slide-image" mode="aspectFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='indexImg'>
+    <image mode="widthFix" src='../../assets/images/indexImg.png'></image>
   </view>
+  <view class='indexContent' style="background-image: url('../../assets/images/indexBg.png');">
+<view class='indexSinglePro' wx:for="{{indexModules}}">
+    <indexImg imgsrc="{{item.setting.indexImg}}" text="123"></indexImg>
+  </view>
+  </view>
+  
+
+
 </view>

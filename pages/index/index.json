@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "indexImg": "../../components/indexImg/indexImg"
+  }
+}

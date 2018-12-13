@@ -8,6 +8,6 @@
       </i-modal>      
     </view>
   </view> -->
-  <image src='../../asset/images/login_pic.png' class='img' mode='widthFix'></image>
+  <image src='../../assets/images/login_pic.png' class='img' mode='widthFix'></image>
  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='joinstore'> 微信登录 </button>
 </view>

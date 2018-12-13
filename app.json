@@ -3,11 +3,17 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/login/login",
-    "pages/phonetest/phonetest"
+    "pages/phonetest/phonetest",
+    "pages/PersonalCenter/PersonalCenter",
+    "pages/OrderList/OrderList",
+    "pages/PlaceOrder/PlaceOrder",
+    "pages/PayResult/PayResult",
+    "pages/AddressList/AddressList",
+    "pages/NewAddress/NewAddress"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "white",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   }

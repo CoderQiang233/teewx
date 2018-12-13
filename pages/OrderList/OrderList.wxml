@@ -1,0 +1,31 @@
+<i-tabs current="{{ current }}" bindchange="handleChange" color="#e23205">
+  <i-tab key="0" title="待付款"></i-tab>
+  <i-tab key="1" title="待发货"></i-tab>
+  <i-tab key="2" title="待收货"></i-tab>
+  <i-tab key="3" title="已完成"></i-tab>
+</i-tabs>
+
+<view class='orderdetail'>
+  <view class='orderdetail-1'>
+    <image src=''></image>
+    <view class='title'>
+      福建雨前龙井
+    </view>
+    <view class='orderdetail-1-2'>
+      <view class='orderdetail-1-2-1'>￥888</view>
+      <view class='orderdetail-1-2-11'>x1</view>
+    </view>
+  </view>
+  <view class='orderdetail-2'>
+    <view class='orderdetail-2-1'>2018-12-11 16:13:48</view>
+    <view class='orderdetail-2-11'>总计：
+      <view class='orderdetail-2-2'>888</view> 元</view>
+  </view>
+  <view class='orderdetail-3' wx:if="{{current==0}}">
+    <view class='paynow'>立即支付</view>
+  </view>
+  <view class='orderdetail-3' wx:if="{{current==2}}">
+    <view class='paynow'>确认收货</view>
+  </view>
+</view>
+

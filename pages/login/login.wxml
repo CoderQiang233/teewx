@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='joinstore'> 微信登录 </button>
+    <view wx:else>
+      <i-modal visible="{{ visible2 }}" bind:ok="handlephonetest2" bind:cancel="handleClose2">
+        <view>希望进行手机验证</view>
+      </i-modal>      
+    </view>
+  </view> -->
+  <image src='../../assets/images/login_pic.png' class='img' mode='widthFix'></image>
+ <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='joinstore'> 微信登录 </button>
+</view>

@@ -1,11 +1,11 @@
-// pages/PersonalCenter/PersonalCenter.js
+// pages/PayResult/PayResult.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    PayStatus:true,
   },
 
   /**
@@ -27,12 +27,6 @@ Page({
    */
   onShow: function () {
 
-  },
-//查看全部订单跳转订单列表页
-  ToOderList(){
-    wx.navigateTo({
-      url: '/pages/OrderList/OrderList',
-    })
   },
 
   /**

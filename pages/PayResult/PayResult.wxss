@@ -1,0 +1,62 @@
+view{
+  box-sizing: border-box;
+}
+page{
+  background: #f2f2f2;
+}
+.icon_box{
+  width: 100vw;
+  height: 300rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+.pay_title{
+  width: 100vw;
+  text-align: center;
+  font-size: 38rpx;
+  background: white;
+  color:rgb(10, 186, 7);
+}
+.pay_title2{
+  width: 100vw;
+  text-align: center;
+  font-size: 38rpx;
+  background: white;
+  color:rgb(254, 0, 0);
+}
+.pay_button_box{
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: white;
+  padding: 50rpx 100rpx 50rpx 100rpx;
+
+}
+.pay_button1{
+  width: 220rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #262626;
+  border: 1rpx solid #bfbfbf;
+  line-height: 100%;
+  
+  
+}
+.pay_button2{
+  width: 220rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 100%;
+  color: #262626;
+  border: 1rpx solid #bfbfbf;
+  
+}

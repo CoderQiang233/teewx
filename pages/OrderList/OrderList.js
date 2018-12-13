@@ -1,11 +1,11 @@
-// pages/PersonalCenter/PersonalCenter.js
+// pages/OrderList/OrderList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    current: 0,
   },
 
   /**
@@ -28,11 +28,11 @@ Page({
   onShow: function () {
 
   },
-//查看全部订单跳转订单列表页
-  ToOderList(){
-    wx.navigateTo({
-      url: '/pages/OrderList/OrderList',
-    })
+  //tab点击方法
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key
+    });
   },
 
   /**

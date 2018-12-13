@@ -3,7 +3,13 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/PersonalCenter/PersonalCenter",
-    "components/categoryProducts/categoryProducts"
+    "pages/phonetest/phonetest",
+    "pages/OrderList/OrderList",
+    "pages/PlaceOrder/PlaceOrder",
+    "pages/PayResult/PayResult",
+    "pages/AddressList/AddressList",
+    "pages/NewAddress/NewAddress",
+    "pages/Product/Product"
   ],
   "window": {
     "backgroundTextStyle": "light",

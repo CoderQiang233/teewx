@@ -1,0 +1,92 @@
+view {
+  box-sizing: border-box;
+}
+
+page {
+  background-color: #F2F1F6;
+}
+
+.orderdetail {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 12px;
+  padding: 5px 10px 10px 10px;
+}
+
+.orderdetail-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+}
+
+.orderdetail-1 image {
+  width: 60px;
+  height: 50px;
+  background: #73d13d;
+}
+
+.orderdetail-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.title {
+  flex: 1;
+  padding-left: 10px;
+}
+
+.orderdetail-2-1 {
+  flex: 1;
+}
+
+.orderdetail-1-2 {
+  text-align: right;
+}
+
+.orderdetail-2-2 {
+  color: #f44;
+  padding-right: 3px;
+}
+
+.orderdetail-2-11 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.orderdetail-1-2-11 {
+  color: #999;
+}
+
+.kuandi {
+  color: #686868;
+}
+
+.paynow {
+  width: 140rpx;
+  height: 40rpx;
+  color: #e23205;
+  border: 1rpx solid #e23205;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+}
+
+.orderdetail-3 {
+  border-top: 2rpx solid #e8e8e8;
+  width: 100%;
+  margin-top: 14rpx;
+  padding-top: 14rpx;
+}

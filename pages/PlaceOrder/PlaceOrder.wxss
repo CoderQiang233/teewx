@@ -1,0 +1,189 @@
+view{
+  box-sizing: border-box;
+}
+page{
+  background: #F2F1F6;
+}
+image{
+  display: block;
+}
+.address_box{
+  width: 100vw;
+  height: 200rpx;
+  background: white;
+  padding: 0 30rpx;
+  display: flex;
+  padding-top: 40rpx;
+  justify-content: space-between;
+  position: relative;
+}
+.address_left{
+  padding-top: 5rpx;
+  height: 100%;
+  line-height: 100%;
+  display: flex;
+}
+.address_middle{
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  padding-left: 40rpx;
+  padding-bottom: 40rpx;
+}
+.address_name{
+  width: 100%;
+  font-size: 32rpx;
+}
+.address_text{
+  width: 100%;
+  font-size: 28rpx;
+  color: #8c8c8c;
+}
+.address_middle{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 100%;
+}
+.address_right{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 100%;
+
+}
+.ad_left{
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+.caitiao{
+  width: 100%;
+  height: 2rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.shoping_section{
+  width: 100vw;
+  height: 320rpx;
+  background: white;
+  margin-top: 16rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.shoping_header{
+  width: 100%;
+  height: 80rpx;
+  padding-left: 30rpx;
+  border-bottom: 2rpx solid #eee;
+  line-height: 80rpx;
+  font-size: 32rpx;
+}
+
+.shoping_body{
+  width: 100%;
+  height: calc(100% - 80rpx);
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.sbody_left{
+  width: 180rpx;
+  height: 180rpx;
+  background: green;
+}
+.sbody_middle{
+  width: 380rpx;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.shop_name{
+  width: 100%;
+  font-size: 28rpx;
+  padding: 0 30rpx;
+ 
+
+}
+.sbody_right{
+  width: 130rpx;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rpx 0 0 0;
+}
+.shop_price{
+  width: 100%;
+  font-size: 28rpx;
+  text-align: end;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  
+}
+.shop_num{
+  width: 100%;
+  color: #949494;
+  font-size: 28rpx;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  
+}
+.the_way{
+  width: 100vw;
+  height: 80rpx;
+  background: white;
+  margin-top: 16rpx;
+  padding: 0 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.way_title{
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.way_content{
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #8c8c8c;
+
+}
+.money{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #a8071a;
+  width: 70%;
+  justify-content: flex-end;
+  height: 100%;
+  padding-right: 30rpx;
+}
+.amount{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100rpx;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+}
+.submit{
+  width: 30%;
+  height: 100%;
+  background: #A63433;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;     
+  font-size: 28rpx;            
+}

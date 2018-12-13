@@ -12,15 +12,18 @@
 
   <view class='button_box'>
     <view class='button_left'>
-    <view class='button_left_text'>设为默认地址：</view>
-      <i-switch  value="{{switch1}}" bind:change="onChange" slot="footer" size="small">
+      <view class='button_left_text'>设为默认地址：</view>
+      <i-switch value="{{switch1}}" bind:change="onChange" slot="footer" size="small">
         <!-- <i-icon type="right" slot="open"></i-icon>
         <i-icon type="close" slot="close"></i-icon> -->
         <view slot="open">是</view>
         <view slot="close">否</view>
       </i-switch>
-      
+    </view>
+    <view class='button_right'>
+      <image src='../../images/Address/weixinicon.png' class='wx_icon'></image>
+      一键导入微信地址>
     </view>
   </view>
-
 </view>
+<view class='baocun'>保存</view>

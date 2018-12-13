@@ -45,9 +45,7 @@ Page({
       'switch1': detail.value
     })
   },
-  switch1Change(e) {
-    console.log('switch1 发生 change 事件，携带值为', e.detail.value)
-  },
+  
 
   /**
    * 生命周期函数--监听页面隐藏

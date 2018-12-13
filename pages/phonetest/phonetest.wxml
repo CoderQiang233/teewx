@@ -1,0 +1,13 @@
+
+<image class='app_img' src='../../asset/images/phonecode_img.png' mode='widthFix'></image>
+<view class='li_window'>
+  <view class='telephone'>
+    <input class='tel_input' placeholder='请输入手机号' type='number' bindinput='tel_input'></input>
+  </view>
+  <view class='code'>
+    <input class='code_input'placeholder='请输入验证码' bindinput='tel_code'></input>
+    <button class='get_code' disabled='{{disable}}' data-id="2" bindtap="getBtn" >{{getcode}}</button>
+  </view>
+        <button class='commite'bindtap='commite'>提交</button>
+</view>
+<i-toast id="toast" />

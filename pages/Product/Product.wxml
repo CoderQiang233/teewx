@@ -1,0 +1,49 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='page'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="" wx:key="{{index}}">
+      <swiper-item>
+        <image src="" mode="widthFix" lazy-load="true" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='center'>
+    <view class='h2'>{{product.name}}</view>
+    <view class='pa'>
+      <view class='price'>
+        <view>
+          ¥{{product.price}}
+        </view>
+        <image wx:if="{{level>1}}" class='dlpriceimg' src='../../assets/images/dlprice3.png'></image>
+      </view>
+      <view class='freight'>运费：免运费</view>
+    </view>
+    <view>
+      <view class='freight'>收货地址: {{address.address?address.address:'无'}}</view>
+    </view>
+  </view>
+
+  <view class='number'>
+    <view class='number_1'>购买数量：</view>
+    <view class='number_2'>
+      <i-input-number value="{{ count }}" min="1" max="99999999" bindchange="handleChange" />
+    </view>
+  </view>
+
+  <view class='detail'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    <!-- <image src='{{product.detail}}' mode="widthFix" lazy-load="{{true}}"></image> -->
+  </view>
+
+  <view class='paybtn'>
+    <view class='paybtn_1'>
+      <i-button inline="{{true}}" long="true" i-class="paybtn_1_right" open-type="getUserInfo" bind:getuserinfo='orderPay'>立即购买</i-button>
+    </view>
+  </view>
+
+  <!-- <view class='gohome'>
+    <image src='{{home_img}}' bindtap="tapName"></image>
+  </view> -->
+
+
+</view>

@@ -9,13 +9,8 @@
     "pages/PlaceOrder/PlaceOrder",
     "pages/PayResult/PayResult",
     "pages/AddressList/AddressList",
-<<<<<<< HEAD
-    "pages/NewAddress/NewAddress"
-=======
     "pages/NewAddress/NewAddress",
     "pages/Product/Product"
-    
->>>>>>> d07c3e11f84c41a3a963f68765e141b893b4fe7f
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -3,21 +3,21 @@
     <image src='' class='person_head'></image>
     <view class='person_info'>
       <view class='person_name'>用户名</view>
-      <view class='current_shop'>当前店铺：福玉茶叶</view>
+      <!-- <view class='current_shop'>当前店铺：福玉茶叶</view> -->
     </view>
-    <view class='person_level_box'>
+    <!-- <view class='person_level_box'>
       <image src='../../images/PersonalCenter/level.png' class='person_level_image'></image>
       <view class='person_level_name'>普通销售员</view>
-    </view>
+    </view> -->
   </view>
-  <view class='header_bottom'>
+  <!-- <view class='header_bottom'>
     <view class='header_bottom_text'>升级到分销员，推广佣金比高达 5%</view>
     <view class='header_bottom_right'>
       <i-icon type="enter" size="18" color="white" />
     </view>
-  </view>
+  </view> -->
 </view>
-<view class='num_section'>
+<!-- <view class='num_section'>
   <view class='num_section_content'>
     <view class='num'>0</view>
     <view class='text'>余额</view>
@@ -34,7 +34,7 @@
     <view class='num'>0</view>
     <view class='text'>券</view>
   </view>
-</view>
+</view> -->
 <view class='person_order' bindtap='ToOderList'>
   <view class='left'>
     <view class='icon'>
@@ -68,7 +68,6 @@
   </view>
 </view>
 <view class='person_address'>
-
   <view class='person_address_box'>
     <view class='left'>
       <view class='icon'>
@@ -81,7 +80,46 @@
     </view>
   </view>
 </view>
-<view class='profit'>
+<view class='person_address'>
+  <view class='person_address_box'>
+    <view class='left'>
+      <view class='icon'>
+        <i-icon type="share" size="22" color="#80848f" />
+      </view>
+      <view class='title'>推广中心</view>
+    </view>
+    <view class='right'>
+      <i-icon type="enter" size="20" color="#80848f" />
+    </view>
+  </view>
+</view>
+<view class='person_address'>
+  <view class='person_address_box'>
+    <view class='left'>
+      <view class='icon'>
+        <i-icon type="message" size="22" color="#80848f" />
+      </view>
+      <view class='title'>联系客服</view>
+    </view>
+    <view class='right'>
+      <i-icon type="enter" size="20" color="#80848f" />
+    </view>
+  </view>
+</view>
+<view class='person_address' >
+  <view class='person_address_box' style='border:0'>
+    <view class='left'>
+      <view class='icon'>
+        <i-icon type="homepage" size="22" color="#80848f" />
+      </view>
+      <view class='title'>线下门店</view>
+    </view>
+    <view class='right'>
+      <i-icon type="enter" size="20" color="#80848f" />
+    </view>
+  </view>
+</view>
+<!-- <view class='profit'>
   <view class='top'>
     <view class='top_top'>当前累计收益(元)</view>
     <view class='top_middle'>0.00</view>
@@ -108,8 +146,8 @@
       </view>
     </view>
   </view>
-</view>
-<view class='extension'>
+</view> -->
+<!-- <view class='extension'>
   <view class='extension_list'>
     <view class='extension_list_top'>1</view>
     <view class='extension_list_bottom'>累计客户</view>
@@ -122,13 +160,13 @@
     <view class='extension_list_top'>0</view>
     <view class='extension_list_bottom'>推广订单</view>
   </view>
-</view>
-<view class='card_section'>
+</view> -->
+<!-- <view class='card_section'>
   <image src='../../images/PersonalCenter/card01.png' class='card_img'></image>
   <image src='../../images/PersonalCenter/card03.png' class='card_img'></image>
   <image src='../../images/PersonalCenter/card02.png' class='card_img'></image>
-</view>
-<view class='wenti'>
+</view> -->
+<!-- <view class='wenti'>
     <view class='profit_bottom_left'>常见问题</view>
     <view class='profit_bottom_right'>
       <view class='right_text'></view>
@@ -136,8 +174,8 @@
         <i-icon type="enter" size="20" color="#80848f" />
       </view>
     </view>
-  </view>
-<view class='footer'>
+  </view> -->
+<!-- <view class='footer'>
   <view class='ftb_box'>
     <view class='small_bt' >店铺主页</view>
     <view class='small_bt' > 会员中心</view>
@@ -145,7 +183,7 @@
     <view  class='small_bt'>线下门店</view>
     <view  class='small_bt'>店铺信息</view>
   </view>
-</view>
+</view> -->
 <view class='footer_img'>
   <image src='../../images/PersonalCenter/footerimg.png' class='foot_img'></image>
 </view>

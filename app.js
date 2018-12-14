@@ -22,10 +22,6 @@ App({
             },           
             success: function (res) {
 
-              wx.setStorageSync('openid', res.data.data.openid)
-              console.log('wxlogin--', wx.getStorageSync('openid'))
-              console.log(res)
-
               var data = res.data
 
               if (data.ret == 200 && data.data.code == 0) {

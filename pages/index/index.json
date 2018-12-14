@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "indexImg": "../../components/indexImg/indexImg",
-    "categoryProducts": "../../components/categoryProducts/categoryProducts"
+    "categoryProducts": "../../components/categoryProducts/categoryProducts",
+    "pictureBanner": "../../components/pictureBanner/pictureBanner"
   }
 }

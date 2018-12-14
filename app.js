@@ -1,8 +1,5 @@
 //app.js
 var bpath = 'http://localhost/Public/weixin/';
-
-var imagepath = "http://localhost/Public/upload/";
-
 var imagepath = "http://localhost/Public/upload";
 App({
   onLaunch: function () {
@@ -22,8 +19,8 @@ App({
             },           
             success: function (res) {
 
-              wx.setStorageSync('openid', res.data.data.openid)
-              console.log('wxlogin--', wx.getStorageSync('openid'))
+              // wx.setStorageSync('openid', res.data.data.openid)
+              // console.log('wxlogin--', wx.getStorageSync('openid'))
               console.log(res)
 
               var data = res.data

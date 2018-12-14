@@ -1,8 +1,5 @@
 //app.js
 var bpath = 'http://localhost/Public/weixin/';
-
-var imagepath = "http://localhost/Public/upload/";
-
 var imagepath = "http://localhost/Public/upload";
 App({
   onLaunch: function () {
@@ -21,18 +18,14 @@ App({
               code: res.code
             },           
             success: function (res) {
-
+              console.log(res)
               var data = res.data
-
               if (data.ret == 200 && data.data.code == 0) {
-
                 wx.setStorage({
                   key: "session",
                   data: data.data.session3rd
                 })
-
               } else {
-
               }
             }
           })

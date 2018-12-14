@@ -1,6 +1,9 @@
 view {
   box-sizing: border-box;
 }
+page{
+  background: white;
+}
 
 .caitiao {
   width: 100vw;

@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "我的订单",
   "usingComponents": {
-    "i-tabs": "../../dist/tabs/index",
-    "i-tab": "../../dist/tab/index"
+    "i-tabs": "../../iview/tabs/index",
+    "i-tab": "../../iview/tab/index"
   }
 }

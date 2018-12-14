@@ -1,4 +1,4 @@
-// components/indexImg/indexImg.js
+// components/categoryProducts/categoryProducts.js
 const app = getApp()
 var basepath = app.basePath;
 var imagepath = app.imagepath;
@@ -7,9 +7,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    setting:null,
-    imgsrc:String,
-    product:String
+    setting: null,
+    text: String,
+    imgsrc: String,
+    products:Array
   },
 
   /**
@@ -23,7 +24,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    gotoProduct: function (e) {
+    gotoProduct:function(e){
       console.log(e.currentTarget.dataset.product_id)
     }
   }

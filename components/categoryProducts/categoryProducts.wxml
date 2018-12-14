@@ -1,0 +1,31 @@
+<!--components/categoryProducts/categoryProducts.wxml-->
+<view class='indexProduct'>
+  <image mode="widthFix" class='indexProductImg' src="{{imagepath + imgsrc}}"></image>
+</view>
+<view class='productsRow'>
+  <i-row>
+    <view wx:for="{{products}}">
+      <i-col span="12" i-class="productCol">
+        <view bindtap='gotoProduct' data-product_id="{{item.product_id}}" class='productBox'>
+          <view class='productImgBox'>
+            <image mode="widthFix" class='productImg' src="{{imagepath +item.first_picture}}"></image>
+          </view>
+          <view class='proCon'>
+            <view class='proName'>
+              {{item.name}}
+            </view>
+            <view class='proIntro'>
+              {{item.intro}}
+            </view>
+            <view class='proBottom'>
+              <view class='proPrice'>
+                ￥{{item.market_price}}
+              </view>
+              <view class='proBuy'>立即购买</view>
+            </view>
+          </view>
+        </view>
+      </i-col>
+    </view>
+  </i-row>
+</view>

@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container" >
+<view class="container">
   <!-- //滑动试图  ScrollView -->
   <view class='scroll'>
     <!--index.wxml-->
@@ -16,11 +16,17 @@
     <image mode="widthFix" src='../../assets/images/indexImg.png'></image>
   </view>
   <view class='indexContent' style="background-image: url('../../assets/images/indexBg.png');">
-<view class='indexSinglePro' wx:for="{{indexModules}}">
-    <indexImg imgsrc="{{item.setting.indexImg}}" text="123"></indexImg>
+    <view class='indexProductContent' wx:for="{{indexModules}}">
+      <view wx:if="{{item.keyword=='IndexImage'}}" class='indexSinglePro'>
+        <indexImg  imgsrc="{{item.setting.indexImg}}" product="{{item.setting.product.product_id}}"></indexImg>
+      </view>
+      <view wx:if="{{item.keyword=='CategoryProducts'}}">
+        <categoryProducts  imgsrc="{{item.setting.indexImg}}" products="{{item.setting.product}}" ></categoryProducts>
+
+      </view>
+    </view>
   </view>
-  </view>
-  
+
 
 
 </view>

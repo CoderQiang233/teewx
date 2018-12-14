@@ -16,14 +16,14 @@
 <view class='shoping_section'>
   <view class='shoping_header'>商品列表</view>
   <view class='shoping_body'>
-    <image class='sbody_left' src="" ></image>
+    <image class='sbody_left' src="{{imagepath+product.first_picture}}" ></image>
     <view class='sbody_middle'>
-      <view class='shop_name'>唤自然 仲夏椰香四件套</view>
+      <view class='shop_name'>{{product.name}}</view>
 
     </view>
     <view class='sbody_right'>
-      <view class='shop_price'>￥ 299</view>
-      <view class='shop_num'>x 1</view>
+      <view class='shop_price'>￥ {{product.market_price}}</view>
+      <view class='shop_num'>x {{product.count}}</view>
     </view>
   </view>
 </view>
@@ -32,6 +32,6 @@
   <view class='way_content'>快递 包邮</view>
 </view>
 <view class='amount'>
-  <view class='money'>合计：￥ 299</view>
+  <view class='money'>合计：￥ {{product.market_price * product.count}}</view>
   <view class='submit'>提交订单</view>
 </view>

@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/login/login",
     "pages/phonetest/phonetest",
     "pages/PersonalCenter/PersonalCenter",

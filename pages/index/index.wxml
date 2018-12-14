@@ -12,17 +12,16 @@
     </swiper>
 
   </view>
-  <view class='indexImg'>
-    <image mode="widthFix" src='../../assets/images/indexImg.png'></image>
-  </view>
   <view class='indexContent' style="background-image: url('../../assets/images/indexBg.png');">
     <view class='indexProductContent' wx:for="{{indexModules}}">
+      <view wx:if="{{item.keyword=='PictureBanner'}}" class='indexImg'>
+        <pictureBanner  imgsrc="{{item.setting.indexImg}}" ></pictureBanner>
+      </view>
       <view wx:if="{{item.keyword=='IndexImage'}}" class='indexSinglePro'>
         <indexImg  imgsrc="{{item.setting.indexImg}}" product="{{item.setting.product.product_id}}"></indexImg>
       </view>
       <view wx:if="{{item.keyword=='CategoryProducts'}}">
         <categoryProducts  imgsrc="{{item.setting.indexImg}}" products="{{item.setting.product}}" ></categoryProducts>
-
       </view>
     </view>
   </view>

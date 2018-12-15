@@ -60,7 +60,7 @@
 					"id": 3,
 					"name": "支付成功页",
 					"pathName": "pages/PayResult/PayResult",
-					"query": "result=1"
+					"query": "result=0"
 				},
 				{
 					"id": -1,

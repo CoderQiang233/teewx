@@ -51,7 +51,7 @@ Page({
   },
   Repayment(){
     wx.navigateTo({
-      url: '/pages/index/index',
+      url: '/pages/PlaceOrder/PlaceOrder',
     })
   },
   /**

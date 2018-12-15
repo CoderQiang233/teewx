@@ -1,11 +1,14 @@
 // pages/PersonalCenter/PersonalCenter.js
+const app = getApp()
+var basepath = app.basePath;
+var imagepath = app.imagepath;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    basepath: basepath
   },
 
   /**
@@ -26,7 +29,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var session3rd = wx.getStorageSync('session');
+    wx.request({
+      url: basepath, 
+      data: {
+        service: 'login.Index',
+        session3rd: session3rd
+      },
+      dataType: 'json',
+      method: 'POST',
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        
+        wx.redirectTo({
+          url: '../login/login',
+        })
+      }
+    })
   },
 //查看全部订单跳转订单列表页
   ToOderList(){

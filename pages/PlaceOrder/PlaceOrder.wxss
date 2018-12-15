@@ -34,6 +34,12 @@ image{
 .address_name{
   width: 100%;
   font-size: 32rpx;
+  display: flex;
+  align-items: center;
+
+}
+.address_phone{
+  margin-left: 20rpx;
 }
 .address_text{
   width: 100%;

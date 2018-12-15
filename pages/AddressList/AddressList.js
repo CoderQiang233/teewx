@@ -21,8 +21,8 @@ Page({
 
         if (that.data.address[i].id == e.currentTarget.id) {
           // console.log(that.data.address[i]);
-          wx.setStorageSync("info", that.data.address[i])
-          console.log(wx.getStorageSync("info"))
+          wx.setStorageSync("address", that.data.address[i])
+          console.log(wx.getStorageSync("address"))
          wx.navigateBack({
            
          })

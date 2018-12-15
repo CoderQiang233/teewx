@@ -65,14 +65,14 @@ Page({
       });
       return
     }
-    if (this.data.detailAddress.length == 0) {
-      console.log("详细地址错误")
-      $Toast({
-        content: '详细地址错误',
-        type: 'warning'
-      });
-      return
-    } 
+    // if (this.data.detailAddress.length == 0) {
+    //   console.log("详细地址错误")
+    //   $Toast({
+    //     content: '详细地址错误',
+    //     type: 'warning'
+    //   });
+    //   return
+    // } 
     // 发起请求存入数据库
     //插入新地址 
    if(this.data.write == 0){
@@ -162,25 +162,28 @@ Page({
     var info = []
     info=(wx.getStorageSync("address"))
     console.log(info)
-    this.setData({
-      name: info.consignee_name,
-      phone: info.consignee_phone,
-    
-      region: [info.province, info.county, info.county],
-      detail: info.address,
-     
-     }) 
-     
-    if (options.state==0){
-      that.setData({
-        switch1: false
+    if(options.title==1){
+      this.setData({
+        name: info.consignee_name,
+        phone: info.consignee_phone,
+
+        region: [info.province, info.county, info.county],
+        detail: info.address,
+
       })
-      
-    }else{
-      that.setData({
-        switch1: true
-      })
+
+      if (options.state == 0) {
+        that.setData({
+          switch1: false
+        })
+
+      } else {
+        that.setData({
+          switch1: true
+        })
+      }
     }
+    
 
     this.data.write = options.title
     console.log(options)

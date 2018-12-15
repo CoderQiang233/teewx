@@ -26,6 +26,9 @@ Component({
   methods: {
     gotoProduct:function(e){
       console.log(e.currentTarget.dataset.product_id)
+      wx.navigateTo({
+        url: '/pages/Product/Product?id=' + e.currentTarget.dataset.product_id,
+      })
     }
   }
 })

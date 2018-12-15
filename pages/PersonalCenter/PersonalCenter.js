@@ -2,6 +2,7 @@
 const app = getApp()
 var basepath = app.basePath;
 var imagepath = app.imagepath;
+import Dialog from '../../vant/dialog/dialog';
 Page({
 
   /**
@@ -42,10 +43,18 @@ Page({
         'Content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success(res) {
-        
-        // wx.redirectTo({
-        //   url: '../login/login',
-        // })
+        Dialog.confirm({
+          title: '请登录',
+          confirmButtonText:'登录'
+        }).then(() => {
+          wx.navigateTo({
+            url: '../login/login',
+          })
+        }).catch(() => {
+          wx.switchTab({
+            url: '/pages/index/index'
+          })
+        });
       }
     })
   },

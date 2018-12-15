@@ -43,9 +43,9 @@ Page({
       },
       success(res) {
         
-        wx.redirectTo({
-          url: '../login/login',
-        })
+        // wx.redirectTo({
+        //   url: '../login/login',
+        // })
       }
     })
   },

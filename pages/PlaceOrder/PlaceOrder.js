@@ -121,7 +121,7 @@ Page({
         },
         success(res) {
           console.log(res);
-          wx.hideLoading();
+         
           that.wxpay(res);
         }
       })
@@ -138,19 +138,20 @@ wxpay(rs){
     'success': function (rs) {
       console.log(rs)
       if (rs.errMsg == 'requestPayment:ok') {
+        wx.hideLoading();
         wx.clearStorageSync('address')
+        wx.clearStorageSync('product')
           wx.navigateTo({
             url: '/pages/PayResult/PayResult?result=1',
           })
       }
     },
     'fail': function (rs) {
-      if (rs.errMsg == 'requestPayment:fail cancel') { } else {
+      wx.hideLoading();
         wx.navigateTo({
           url: '/pages/PayResult/PayResult?result=0',
         })
-      }
-    }
+    },
   })
 },
   /**

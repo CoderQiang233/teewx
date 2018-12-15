@@ -39,6 +39,8 @@ Page({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
+
+        console.log(res.userInfo)
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
@@ -102,5 +104,6 @@ Page({
         }
       })
     }
+    console.log(this.data.userInfo)
   }
 })

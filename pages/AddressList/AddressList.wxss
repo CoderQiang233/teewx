@@ -9,7 +9,9 @@ view {
   top: 0;
   left: 0;
 }
-
+page{
+  padding-bottom: 160rpx;
+}
 .address_box {
   width: 100vw;
   padding-left: 30rpx;
@@ -85,14 +87,15 @@ view {
 }
 .button_box{
   width: 100vw;
-  height: 140rpx;
+  height: 120rpx;
   position: fixed;
-  bottom: 40rpx;
+  bottom: 0rpx;
   left: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 40rpx;
+  padding: 30rpx 40rpx;
+  background: white;
 }
 .add_address{
   width: 320rpx;

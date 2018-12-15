@@ -104,20 +104,26 @@ Page({
       console.log(that.data.address);
       let address = that.data.address.province + that.data.address.city + that.data.address.county + that.data.address.address;
       let session3rd=wx.getStorageSync('session');
+      let products = {
+        product_id: that.data.product.product_id,
+        name: that.data.product.name,
+        quantity: that.data.product.count,
+        price: that.data.product.market_price,
+        total: that.data.product.market_price * that.data.product.count,
+        first_picture: that.data.product.first_picture,
+      }
       wx.request({
-        url: basepath + '?service=Pay.AddOrder',
+        url: basepath + '?service=Pay.AddOrder&XDEBUG_SESSION_START=18357',
         method: "post",
         data:
         
         {
-          product:{
-            product_id: that.data.product.product_id,
-            name: that.data.product.name,
-            quantity: that.data.product.count,
-            price: that.data.product.market_price,
+          products:JSON.stringify(products),
+            shipping_address: address,
+            receiver_name: that.data.address.consignee_name,
+            receiver_phone: that.data.address.consignee_phone,
             total: that.data.product.market_price * that.data.product.count,
-            first_picture: that.data.product.first_picture,
-          }
+            session3rd: session3rd
         },
         dataType: 'json',
         header: {

@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "确认订单",
   "usingComponents": {
-    "i-icon": "../../iview/icon/index"
+    "i-icon": "../../iview/icon/index",
+    "i-toast": "../../iview/toast/index"
   }
 }

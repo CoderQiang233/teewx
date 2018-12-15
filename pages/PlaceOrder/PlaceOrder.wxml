@@ -35,3 +35,4 @@
   <view class='money'>合计：￥ {{product.market_price * product.count}}</view>
   <view class='submit' bindtap='submitOrder'>提交订单</view>
 </view>
+<i-toast id="toast" />

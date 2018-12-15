@@ -134,9 +134,12 @@ Page({
                 },
                 success(res) {
                   console.log(res.data)
-                  wx.navigateTo({
-                    url: '../index/index',
-                  })
+                  if(res.data.data.code==1){
+                    console.log("跳转操作")
+                    wx.navigateBack({
+                       delta:2
+                    })
+                  }
                 }
               })
             }

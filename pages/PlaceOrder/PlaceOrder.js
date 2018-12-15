@@ -3,6 +3,7 @@
 const app = getApp()
 var basepath = app.basePath;
 var imagepath = app.imagepath;
+const { $Toast } = require('../../iview/base/index');
 Page({
 
   /**
@@ -48,7 +49,7 @@ Page({
     if (address) {
       console.log(address);
       this.setData({
-
+        address: address
       })
     } else {
       this.getAddressBySession();
@@ -87,11 +88,71 @@ Page({
   },
   //提交订单
   submitOrder(){
+    console.log(1);
+    wx.showLoading({
+      title: '订单提交中',
+      mask:true
+    })
     let that=this;
     if(!this.data.address){
-      
+      wx.hideLoading();
+      $Toast({
+        content: '请选择收货地址',
+        type: 'warning'
+      });
+    }else{
+      console.log(that.data.address);
+      let address = that.data.address.province + that.data.address.city + that.data.address.county + that.data.address.address;
+      let session3rd=wx.getStorageSync('session');
+      wx.request({
+        url: basepath + '?service=Pay.AddOrder',
+        method: "post",
+        data: {
+          product_name: that.data.product.name,
+          product_price:that.data.product.market_price,
+          product_num: that.data.product.count,
+          shipping_address:address ,
+          product_id: that.data.product.product_id,
+          session3rd: session3rd,
+        },
+        dataType: 'json',
+        header: {
+          'Content-type': 'application/x-www-form-urlencoded'
+        },
+        success(res) {
+          console.log(res);
+          wx.hideLoading();
+          that.wxpay(res);
+        }
+      })
     }
   },
+  //调起微信支付
+wxpay(rs){
+  wx.requestPayment({
+    'timeStamp': rs.data.data.info.timeStamp,
+    'nonceStr': rs.data.data.info.nonceStr,
+    'package': rs.data.data.info.package,
+    'signType': 'MD5',
+    'paySign': rs.data.data.info.paySign,
+    'success': function (rs) {
+      console.log(rs)
+      if (rs.errMsg == 'requestPayment:ok') {
+        wx.clearStorageSync('address')
+          wx.navigateTo({
+            url: '/pages/PayResult/PayResult?result=1',
+          })
+      }
+    },
+    'fail': function (rs) {
+      if (rs.errMsg == 'requestPayment:fail cancel') { } else {
+        wx.navigateTo({
+          url: '/pages/PayResult/PayResult?result=0',
+        })
+      }
+    }
+  })
+},
   /**
    * 生命周期函数--监听页面隐藏
    */

@@ -81,6 +81,7 @@ Page({
     wx.request({
       url: basepath + '?service=Login.Index',
       dataType: 'json',
+      method:'post',
       header: {
         'Content-type': 'application/x-www-form-urlencoded'
       },
@@ -88,7 +89,7 @@ Page({
         session3rd: wx.getStorageSync('session')
       },
       success: function (rs) {
-        console.log(rs.data.data.info);
+        console.log(rs);
         if (rs.data.data.code == 1) {
           that.setData({
             user: true

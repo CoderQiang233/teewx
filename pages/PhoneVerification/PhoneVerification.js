@@ -45,7 +45,7 @@ Page({
       })
 
 
-      var currentTime = 3;
+      var currentTime = 60;
       that.setData({
         disable: true,
         getcode: currentTime + '秒'
@@ -116,6 +116,7 @@ Page({
                 content: '验证码不正确',
                 type: 'error'
               });
+              return
             }
             if(res.data.data ==1){
               wx.request({

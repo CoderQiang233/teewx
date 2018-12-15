@@ -21,8 +21,8 @@ Page({
 
         if (that.data.address[i].id == e.currentTarget.id) {
           // console.log(that.data.address[i]);
-          wx.setStorageSync("info", that.data.address[i])
-          console.log(wx.getStorageSync("info"))
+          wx.setStorageSync("address", that.data.address[i])
+          console.log(wx.getStorageSync("address"))
          wx.navigateBack({
            
          })
@@ -59,11 +59,30 @@ Page({
   onReady: function () {
 
   },
+  gotoNewAddress:function(e){
+    console.log(e)
+    var that=this
+    for (var i = 0; i < this.data.address.length; i++) {
 
+      if (that.data.address[i].id == e.currentTarget.dataset.addressid) {
+        // console.log(that.data.address[i]);
+        wx.setStorageSync("address", that.data.address[i])
+        console.log(wx.getStorageSync("address"))
+         
+      }
+    }
+
+
+
+   wx.navigateTo({
+     url: '../NewAddress/NewAddress?title=1&addressid=' + e.currentTarget.dataset.addressid + '&state=' + e.currentTarget.dataset.statue,
+   })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that =this
     wx.request({
       url: basepath, // 仅为示例，并非真实的接口地址
       data: {

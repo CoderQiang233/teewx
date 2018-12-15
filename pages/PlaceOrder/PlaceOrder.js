@@ -107,13 +107,17 @@ Page({
       wx.request({
         url: basepath + '?service=Pay.AddOrder',
         method: "post",
-        data: {
-          product_name: that.data.product.name,
-          product_price:that.data.product.market_price,
-          product_num: that.data.product.count,
-          shipping_address:address ,
-          product_id: that.data.product.product_id,
-          session3rd: session3rd,
+        data:
+        
+        {
+          product:{
+            product_id: that.data.product.product_id,
+            name: that.data.product.name,
+            quantity: that.data.product.count,
+            price: that.data.product.market_price,
+            total: that.data.product.market_price * that.data.product.count,
+            first_picture: that.data.product.first_picture,
+          }
         },
         dataType: 'json',
         header: {
@@ -121,7 +125,7 @@ Page({
         },
         success(res) {
           console.log(res);
-          wx.hideLoading();
+         
           that.wxpay(res);
         }
       })
@@ -138,19 +142,20 @@ wxpay(rs){
     'success': function (rs) {
       console.log(rs)
       if (rs.errMsg == 'requestPayment:ok') {
+        wx.hideLoading();
         wx.clearStorageSync('address')
+        wx.clearStorageSync('product')
           wx.navigateTo({
             url: '/pages/PayResult/PayResult?result=1',
           })
       }
     },
     'fail': function (rs) {
-      if (rs.errMsg == 'requestPayment:fail cancel') { } else {
+      wx.hideLoading();
         wx.navigateTo({
           url: '/pages/PayResult/PayResult?result=0',
         })
-      }
-    }
+    },
   })
 },
   /**

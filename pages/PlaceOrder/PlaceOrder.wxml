@@ -4,7 +4,9 @@
     <i-icon type="coordinates" size="24" color="#d9d9d9"/>
   </view>
   <view class='address_middle'>
-    <view class='address_name'>{{address.consignee_name}}</view>
+    <view class='address_name'>{{address.consignee_name}}
+    <view class='address_phone'>{{address.consignee_phone}}</view>
+    </view>
     <view class='address_text'>{{address.address}}</view>
   </view>
   </view>

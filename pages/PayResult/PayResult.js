@@ -49,6 +49,7 @@ Page({
       url: '/pages/index/index',
     })
   },
+  //重新支付
   Repayment(){
     wx.navigateTo({
       url: '/pages/PlaceOrder/PlaceOrder',

@@ -22,7 +22,10 @@ Page({
     write:0,
     session3rd:'',
     //用户id
-    menberid:''
+    menberid:'',
+    name:'',
+    phone:'',
+    detail:''
   },
   //获取收货人姓名
   name_input:function(e){
@@ -155,6 +158,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+   var that=this
+    var info = []
+    info=(wx.getStorageSync("address"))
+    console.log(info)
+    this.setData({
+      name: info.consignee_name,
+      phone: info.consignee_phone,
+    
+      region: [info.province, info.county, info.county],
+      detail: info.address,
+     
+     }) 
+     
+    if (options.state==0){
+      that.setData({
+        switch1: false
+      })
+      
+    }else{
+      that.setData({
+        switch1: true
+      })
+    }
+
     this.data.write = options.title
     console.log(options)
     this.data.menberid = options.addressid

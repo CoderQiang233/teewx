@@ -1,30 +1,40 @@
 
 <!-- 彩色 -->
+
 <image src='../../images/PlaceOrder/caitiao5.png' class='caitiao'></image>
 <!-- 地址列表--整体父元素-->
-<view class='address_box'>
+<view class='address_box' wx:for="{{address}}">
 <!-- 地址列表--单行-->
-  <view class='address_list'>
+  <view class='address_list' catchtap='backview'id="{{item.id}}">
     <view class='address_list_left'>
-      <view class='name'>羊</view>
-      <view class='moren'>默认</view>
+      <view class='name'>{{item.consignee_name}}</view>
+    
+      <view wx:if="{{item.state  !=1}}">
+      <!-- <view class='moren' >默认</view> -->
+      </view>
+       <view wx:else>
+       <view class='moren' >默认</view>
+      </view>
     </view>
     <view class='address_list_middle'>
-      <view class='phone'>18435147296</view>
-      <view class='address'>山西省太原市小店区亲贤北街长治路口茂业天地小区3104
-      山西省太原市小店区亲贤北街长治路口茂业天地小区3104
+      <view class='phone'>{{item.consignee_phone}}</view>
+      <view class='address'>{{item.province}}{{item.city}}{{item.county}}{{item.address}}
       </view>
 
     </view>
-    <view class='address_list_right' bindtap='editorAddress'>
+     <navigator url="../NewAddress/NewAddress?title=1&addressid={{item.id}}" >
+    <view class='address_list_right'>
       <i-icon type="editor" size="24" color="#8c8c8c" />
     </view>
+    </navigator>
   </view>
   <!-- 地址列表--单行结束-->
 </view>
 <!-- 底部按钮 -->
 <view class='button_box'>
-  <view class='add_address' bindtap='editorAddress'>+新建地址</view>
+ <navigator url="../NewAddress/NewAddress?title=0" >
+  <view class='add_address'>+新建地址</view>
+  </navigator>
   <view class='add_address2'>
     <image src='../../images/Address/weixinicon.png'></image>
     一键导入微信地址

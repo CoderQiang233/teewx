@@ -1,5 +1,5 @@
 {
-	"description": "项目配置文件。",
+	"description": "项目配置文件",
 	"packOptions": {
 		"ignore": []
 	},
@@ -8,17 +8,16 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.1",
 	"appid": "wx6084b273399ab0d4",
-	"projectname": "teastore",
-	"svr": "",
-	"client": "",
-	"qcloudRoot": "",
-	"miniprogramRoot": "",
-	"pluginRoot": "",
+	"projectname": "weixin",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
 	"scripts": {},
 	"condition": {
 		"search": {
@@ -34,11 +33,10 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -62,7 +60,7 @@
 					"id": 3,
 					"name": "支付成功页",
 					"pathName": "pages/PayResult/PayResult",
-					"query": ""
+					"query": "result=0"
 				},
 				{
 					"id": -1,
@@ -81,6 +79,11 @@
 					"name": "商品详情页",
 					"pathName": "pages/Product/Product",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录页面",
+					"pathName": "pages/login/login"
 				}
 			]
 		}

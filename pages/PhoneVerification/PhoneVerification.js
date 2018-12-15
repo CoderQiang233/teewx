@@ -80,9 +80,6 @@ Page({
       code: e.detail.value
     })
   },
-  commite2: function () {
-   
-  },
   commite:function(){
     var that=this;
     console.log(this.data.phonenum)
@@ -130,13 +127,16 @@ Page({
                   nickName: wx.getStorageSync('userMessage').nickName,
                   phone:that.data.phonenum,
                   headPortrait: wx.getStorageSync('userMessage').avatarUrl,
-                  openid: wx.getStorageSync('openid')
+                  session3rd: wx.getStorageSync('session')
                 },
                 header: {
                   'content-type': 'application/x-www-form-urlencoded' // 默认值
                 },
                 success(res) {
                   console.log(res.data)
+                  wx.navigateTo({
+                    url: '../index/index',
+                  })
                 }
               })
             }
@@ -150,7 +150,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    // wx.getStorage({
+    //   key: 'session',
+    //   success: function (res) {
+    //    console.log(res)
+        
+    //     wx.request({
+    //       url: basepath, // 仅为示例，并非真实的接口地址
+    //       data: {
+    //         service: 'login.Index',
+    //         session3rd: wx.getStorageSync("session") 
+    //       },
+    //       dataType: 'json',
+    //       method: 'POST',
+    //       header: {
+    //         'Content-type': 'application/x-www-form-urlencoded' // 默认值
+    //       },
+    //       success(res) {
+    //         console.log(res)
+    //       }
+    //     })
+    //    }
+    // })
   },
 
   /**
@@ -185,7 +206,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    
   },
 
   /**

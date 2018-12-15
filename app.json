@@ -3,7 +3,7 @@
     "pages/index/index",
     "pages/login/login",
     "pages/PersonalCenter/PersonalCenter",
-    "pages/phonetest/phonetest",
+    "pages/PhoneVerification/PhoneVerification",
     "pages/OrderList/OrderList",
     "pages/PlaceOrder/PlaceOrder",
     "pages/PayResult/PayResult",

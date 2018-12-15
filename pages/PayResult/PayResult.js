@@ -5,14 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    PayStatus:true,
+    PayStatus:1,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    if (options.result==1){
+      this.setData({
+        PayStatus:1,
+      })
+    } else if (options.result==0){
+      this.setData({
+        PayStatus:0,
+      })
+    }
   },
 
   /**
@@ -28,7 +37,24 @@ Page({
   onShow: function () {
 
   },
-
+  //查看订单
+  toOrderList(){
+    wx.navigateTo({
+      url: '/pages/OrderList/OrderList',
+    })
+  },
+  //返回首页
+  toIndex() {
+    wx.navigateTo({
+      url: '/pages/index/index',
+    })
+  },
+  //重新支付
+  Repayment(){
+    wx.navigateTo({
+      url: '/pages/PlaceOrder/PlaceOrder',
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

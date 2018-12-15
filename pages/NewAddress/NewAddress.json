@@ -3,7 +3,8 @@
   "navigationBarTitleText": "编辑地址",
   "usingComponents": {
     "i-switch": "../../iview/switch/index",
-    "i-icon": "../../iview/icon/index"
+    "i-icon": "../../iview/icon/index",
+    "i-toast": "../../iview/toast/index"
   }
   
   

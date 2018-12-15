@@ -39,6 +39,8 @@ Page({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
+
+        console.log(res.userInfo)
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
@@ -94,13 +96,16 @@ Page({
               // }else{
               //   console.log("老用户登录，")
               // }
-              wx.redirectTo({
-                url: '../phonetest/phonetest',
+              wx.navigateTo({
+                
+              
+                url: '../PhoneVerification/PhoneVerification',
               })
             }
           })
         }
       })
     }
+    console.log(this.data.userInfo)
   }
 })

@@ -8,7 +8,8 @@ page {
 
 .header {
   width: 100vw;
-  height: 210rpx;
+  /* height: 210rpx; */
+  height: 156rpx;
   background: linear-gradient(to right, #2d2f3f, #4e5161);
   padding-left: 30rpx;
   padding-right: 20rpx;
@@ -17,7 +18,7 @@ page {
 .header_top {
   width: 100%;
   height: 136rpx;
-  border-bottom: 2rpx solid rgba(112, 112, 112, 0.8);
+  /* border-bottom: 2rpx solid rgba(112, 112, 112, 0.8); */
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -38,12 +39,14 @@ page {
   height: 86rpx;
   display: flex;
   flex-wrap: wrap;
-  align-content: space-around;
+  align-items: center;
 }
 
 .person_name {
+  height: 36rpx;
   color: white;
   width: 100%;
+  line-height: 36rpx;
 }
 
 .current_shop {
@@ -205,6 +208,7 @@ page {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 16rpx;
 }
 
 .button_section_content {
@@ -230,9 +234,9 @@ page {
 
 .person_address {
   width: 100vw;
-  height: 120rpx;
+  height: 88rpx;
   overflow: hidden;
-  padding: 16rpx 0;
+  /* padding: 16rpx 0; */
 }
 
 .person_address_box {
@@ -242,6 +246,7 @@ page {
   padding: 0 20rpx 0 30rpx;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1rpx solid #eeeeee;
 }
 
 .person_address_box .left {

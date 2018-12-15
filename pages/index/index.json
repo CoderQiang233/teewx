@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "indexImg": "../../components/indexImg/indexImg"
+    "indexImg": "../../components/indexImg/indexImg",
+    "categoryProducts": "../../components/categoryProducts/categoryProducts",
+    "pictureBanner": "../../components/pictureBanner/pictureBanner"
   }
 }

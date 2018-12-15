@@ -1,6 +1,7 @@
 // pages/product/product.js
 const app = getApp()
 var basepath = app.basePath;
+var imagepath = app.imagepath;
 const WxParse = require('../../wxParse/wxParse.js');
 Page({
 
@@ -8,40 +9,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:1,
-    imgUrls: [],
+    id: 100,
+    imagepath: imagepath,
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    home_img: '/assets/images/home.png',
-    product: {
-      name: '福建安溪黑茶', price:888
-    },
-    level: '',
+    product: {},
     count: 1,
-    member: {
-      productp:360
-    },
-    address: {},
   },
- 
-  handleChange: function ({ detail }) {
-    this.setData({
-      count: detail.value
+
+  goToOrderSubmit(){
+    let product = this.data.product;
+    product.count=this.data.count;
+    wx.setStorageSync('product', product);
+    wx.navigateTo({
+      url: '/pages/PlaceOrder/PlaceOrder',
     })
   },
-  // tapName() {
-  //   wx.navigateTo({
-  //     url: "../securitycode/securitycode",
-  //   })
-  // },
-  //购买
-  orderPay(e) {
 
+  orderPay(e) {
     if (e.detail.errMsg != 'getUserInfo:ok') {
       return;
-    } 
+    }
 
     wx.showLoading({
       title: '下单中...',
@@ -64,7 +54,7 @@ Page({
 
     wx.getStorage({
       key: 'session',
-      success: function (res) {
+      success: function(res) {
         let session3rd = res.data;
         console.log(that.data);
         wx.request({
@@ -86,7 +76,7 @@ Page({
             "province_name": that.data.address.province,
             "product_id": that.data.product.id,
           },
-          success: function (rs) {
+          success: function(rs) {
             if (rs.data.data.code == 1) {
               wx.hideLoading();
 
@@ -96,7 +86,7 @@ Page({
                 'package': rs.data.data.info.package,
                 'signType': 'MD5',
                 'paySign': rs.data.data.info.paySign,
-                'success': function (rs) {
+                'success': function(rs) {
                   console.log(rs)
 
                   if (rs.errMsg == 'requestPayment:ok') {
@@ -105,9 +95,8 @@ Page({
                     })
                   }
                 },
-                'fail': function (rs) {
-                  if (rs.errMsg == 'requestPayment:fail cancel') {
-                  } else {
+                'fail': function(rs) {
+                  if (rs.errMsg == 'requestPayment:fail cancel') {} else {
                     wx.showToast({
                       title: '支付失败!',
                     })
@@ -115,7 +104,7 @@ Page({
                 }
               })
 
-            } else if (rs.data.data.code == 2){
+            } else if (rs.data.data.code == 2) {
               wx.showToast({
                 title: '库存不足!',
               })
@@ -134,211 +123,97 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
     console.log(options);
-    if(options.id){
+    if (options.id) {
       this.setData({
         id: options.id
       })
     }
-   
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
-  checkmember:function(){
 
-    let _this = this;
-    //获取会员信息
-    wx.getStorage({
-      key: 'session',
-      success: function (res) {
-
-        let session3rd = res.data;
-
-        wx.request({
-          url: basepath + '?service=Product.GetByOpenId',
-          method: 'POST',
-          dataType: 'json',
-          header: {
-            'Content-type': 'application/x-www-form-urlencoded'
-          },
-          data: { "session3rd": session3rd },
-          success: function (rs) {
-            console.log(rs)
-            if (rs.data.data.code == 1 && rs.data.data.info) {
-              _this.setData({
-                level: rs.data.data.info.level,
-                member: rs.data.data.info
-              })
-
-            }else{
-              
-                //没有查到会员信息的时候，查看时候有未完成订单
-                wx.request({
-                  url: basepath + '?service=Pay.findMemOrderBySession3rd',
-                  method: 'POST',
-                  dataType: 'json',
-                  header: {
-                    'Content-type': 'application/x-www-form-urlencoded'
-                  },
-                  data: {
-                    "session3rd": session3rd
-                  },
-                  success(res) {
-                    console.log(res);
-                    if (res.data.data.code == 1) {
-                      
-                      wx.showModal({
-                        title: '提示',
-                        content: '您的注册订单尚未完成，是否立即完成？',
-                        showCancel: false,
-                        success: function (res) {
-                          if (res.confirm) {
-                            wx.redirectTo({
-                              url: '/pages/paypage/paypage?info=' + JSON.stringify(res.data.data.info),
-                            })
-                          }
-                        }
-                      })
-
-                    } else if (res.data.data.code == 0) {
-                      wx.showModal({
-                        title: '提示',
-                        content: '是否立即注册为志梨国际会员？',
-                        showCancel: false,
-                        success: function (res) {
-                          if (res.confirm) {
-                            wx.redirectTo({
-                              url: '/pages/register/register',
-                            })
-                          }
-                        }
-                      })
-                    }
-                  }
-                })
-
-
-                
-
-            }
-          }
-        })
-      }
-    })
-
-  },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
+    this.getProduct();
 
-    this.checkmember();
-
-    let _this = this;
-
-
-    //获取商品信息
+  },
+  //获取商品信息
+  getProduct() {
+    var that = this;
     wx.request({
-      url: basepath + '?service=Product.GetById',
+      url: basepath + '?service=Product.GetProudct',
       dataType: 'json',
       header: {
         'Content-type': 'application/x-www-form-urlencoded'
       },
-      data: { "id": this.data.id },
-      success: function (rs) {
-        console.log(rs);
-
+      data: {
+        "id": this.data.id
+      },
+      success: function(rs) {
+        console.log(rs.data.data.info);
         if (rs.data.data.code == 1) {
-
-          _this.setData({
+          that.setData({
             product: rs.data.data.info
           })
-
-          WxParse.wxParse('article', 'html', rs.data.data.info.detail, _this, 5);
+          WxParse.wxParse('article', 'html', rs.data.data.info.detail, that, 5);
         }
-
-
       }
     })
-  
+  },
 
-
-    //获取收货地址
-    wx.getStorage({
-      key: 'session',
-      success: function (res) {
-
-        let session3rd = res.data;
-
-        wx.request({
-          url: basepath + '?service=MyAddresss.GetMyAddresssBySession3rd',
-          method: 'POST',
-          dataType: 'json',
-          header: {
-            'Content-type': 'application/x-www-form-urlencoded'
-          },
-          data: { "session3rd": session3rd },
-          success: function (rs) {
-            console.log(rs);
-            if (rs.data.data.code == 1) {
-
-              _this.setData({
-                address: rs.data.data.info
-              })
-            } else {
-              _this.setData({
-                address: false
-              })
-            }
-          }
-        })
-      }
+  //商品数量修改方法
+  handleChange: function({
+    detail
+  }) {
+    this.setData({
+      count: detail.value
     })
-
-
   },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 

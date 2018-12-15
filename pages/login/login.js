@@ -96,8 +96,10 @@ Page({
               // }else{
               //   console.log("老用户登录，")
               // }
-              wx.redirectTo({
-                url: '../phonetest/phonetest',
+              wx.navigateTo({
+                
+              
+                url: '../PhoneVerification/PhoneVerification',
               })
             }
           })

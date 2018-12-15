@@ -1,0 +1,5 @@
+<!--components/pictureBanner/pictureBanner.wxml-->
+<view class='indexProduct'>
+<image  mode="widthFix" class='indexProductImg' src="{{imagepath + imgsrc}}"></image>
+
+</view>

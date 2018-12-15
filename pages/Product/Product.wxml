@@ -1,9 +1,9 @@
 <import src="../../wxParse/wxParse.wxml" />
 <view class='page'>
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="" wx:key="{{index}}">
+    <block wx:for="{{product.banner_list}}" wx:key="{{index}}">
       <swiper-item>
-        <image src="" mode="widthFix" lazy-load="true" class="slide-image" width="355" height="150" />
+        <image src="{{imagepath+item.path}}" mode="widthFix" lazy-load="true" class="slide-image" width="355" height="150" />
       </swiper-item>
     </block>
   </swiper>
@@ -12,14 +12,11 @@
     <view class='pa'>
       <view class='price'>
         <view>
-          ¥{{product.price}}
+          ¥{{product.market_price}}
         </view>
-        <image wx:if="{{level>1}}" class='dlpriceimg' src='../../assets/images/dlprice3.png'></image>
+        <!-- <image wx:if="{{level>1}}" class='dlpriceimg' src='../../assets/images/dlprice3.png'></image> -->
       </view>
       <view class='freight'>运费：免运费</view>
-    </view>
-    <view>
-      <view class='freight'>收货地址: {{address.address?address.address:'无'}}</view>
     </view>
   </view>
 
@@ -37,7 +34,7 @@
 
   <view class='paybtn'>
     <view class='paybtn_1'>
-      <i-button inline="{{true}}" long="true" i-class="paybtn_1_right" open-type="getUserInfo" bind:getuserinfo='orderPay'>立即购买</i-button>
+      <i-button inline="{{true}}" long="true" i-class="paybtn_1_right" open-type="getUserInfo" bind:getuserinfo='goToOrderSubmit'>立即购买</i-button>
     </view>
   </view>
 

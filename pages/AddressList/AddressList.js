@@ -10,12 +10,43 @@ Page({
     address:[],
     id:'',
     show:'none',
+    way:''
   },
+  backview:function(e){
+    var that =this;
+    // console.log(e.currentTarget.id)
+    //如果是从订单页面跳转过来的  保存用户信息
+    if(this.data.way =='order'){
+      for (var i = 0; i < this.data.address.length; i++) {
 
+        if (that.data.address[i].id == e.currentTarget.id) {
+          // console.log(that.data.address[i]);
+          wx.setStorageSync("info", that.data.address[i])
+          console.log(wx.getStorageSync("info"))
+         wx.navigateBack({
+           
+         })
+        }
+      }
+    }else{
+      console.log('保持在此页面')
+    }
+    
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    if(options.way ='order'){
+      this.setData({
+        way:'order'
+      })
+    } else {
+      this.setData({
+        way: 'defale'
+      })
+    }
     var that = this
     console.log(this.data.id)
 

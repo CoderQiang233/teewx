@@ -1,7 +1,7 @@
 // pages/NewAddress/NewAddress.js
 const app = getApp()
 var basepath = app.basePath;
-const { $Toast } = require('../../dist/base/index');
+const { $Toast } = require('../../iview/base/index');
 Page({
 
   /**

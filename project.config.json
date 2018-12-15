@@ -34,33 +34,58 @@
 			"list": []
 		},
 		"game": {
+			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
-					"name": "登录",
-					"pathName": "pages/login/login",
+					"name": "个人中心",
+					"pathName": "pages/PersonalCenter/PersonalCenter",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "手机验证码",
-					"pathName": "pages/phonetest/phonetest",
+					"name": "订单列表页",
+					"pathName": "pages/OrderList/OrderList",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "地址列表",
+					"name": "提交订单页",
+					"pathName": "pages/PlaceOrder/PlaceOrder",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "支付成功页",
+					"pathName": "pages/PayResult/PayResult",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址列表页",
 					"pathName": "pages/AddressList/AddressList",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "修改地址",
-					"pathName": "pages/NewAddress/NewAddress"
+					"name": "编辑地址",
+					"pathName": "pages/NewAddress/NewAddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品详情页",
+					"pathName": "pages/Product/Product",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录页面",
+					"pathName": "pages/login/login"
 				}
 			]
 		}

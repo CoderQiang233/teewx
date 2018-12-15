@@ -8,8 +8,8 @@ Component({
    */
   properties: {
     setting:null,
-    text:String,
-    imgsrc:String
+    imgsrc:String,
+    product:String
   },
 
   /**
@@ -23,6 +23,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    gotoProduct: function (e) {
+      console.log(e.currentTarget.dataset.product_id)
+    }
   }
 })

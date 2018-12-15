@@ -5,7 +5,7 @@
 <!-- 地址列表--整体父元素-->
 <view class='address_box' wx:for="{{address}}">
 <!-- 地址列表--单行-->
-  <view class='address_list'>
+  <view class='address_list' catchtap='backview'id="{{item.id}}">
     <view class='address_list_left'>
       <view class='name'>{{item.consignee_name}}</view>
     

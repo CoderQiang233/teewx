@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "福玉茶叶",
   "usingComponents": {
-    "i-icon": "../../iview/icon/index"
+    "i-icon": "../../iview/icon/index",
+    "van-dialog": "../../vant/dialog/index"
   }
 }

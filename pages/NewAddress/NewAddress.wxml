@@ -26,4 +26,5 @@
     </view>
   </view>
 </view>
-<view class='baocun'>保存</view>
+<view class='baocun' bindtap='commite'>保存</view>
+<i-toast id="toast" />

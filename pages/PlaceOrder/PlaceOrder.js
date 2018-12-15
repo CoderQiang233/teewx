@@ -139,15 +139,15 @@ wxpay(rs){
       console.log(rs)
       if (rs.errMsg == 'requestPayment:ok') {
         wx.clearStorageSync('address')
-        wx.showToast({
-          title: '支付成功!',
-        })
+          wx.navigateTo({
+            url: '/pages/PayResult/PayResult?result=1',
+          })
       }
     },
     'fail': function (rs) {
       if (rs.errMsg == 'requestPayment:fail cancel') { } else {
-        wx.showToast({
-          title: '支付失败!',
+        wx.navigateTo({
+          url: '/pages/PayResult/PayResult?result=0',
         })
       }
     }

@@ -3,13 +3,16 @@
     "pages/index/index",
     "pages/login/login",
     "pages/PersonalCenter/PersonalCenter",
+    "pages/PopularizeCenter/PopularizeCenter",
     "pages/PhoneVerification/PhoneVerification",
     "pages/OrderList/OrderList",
     "pages/PlaceOrder/PlaceOrder",
     "pages/PayResult/PayResult",
     "pages/AddressList/AddressList",
     "pages/NewAddress/NewAddress",
-    "pages/Product/Product"
+    "pages/Product/Product",
+    "pages/OrderDetail/OrderDetail",
+    "pages/PromotionRules/PromotionRules"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,5 +36,5 @@
         "selectedIconPath": "assets/images/people1.png"
       }
     ]
-    }
+  }
 }

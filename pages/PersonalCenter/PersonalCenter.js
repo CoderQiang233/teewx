@@ -87,6 +87,18 @@ Page({
       url: '/pages/OrderList/OrderList?current=' + e.currentTarget.dataset.current,
     })
   },
+  //我的地址按钮
+  ToMyAddress(){
+    wx.navigateTo({
+      url: '/pages/AddressList/AddressList',
+    })
+  },
+  //推广中心按钮
+  ToMyAddress() {
+    wx.navigateTo({
+      url: '/pages/PopularizeCenter/PopularizeCenter',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面隐藏

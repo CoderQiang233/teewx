@@ -6,7 +6,7 @@
   <i-tab key="3" title="已完成"></i-tab>
 </i-tabs>
 
-<view class='orderdetail' wx:for="" wx:key="{{index}}">
+<view class='orderdetail'  wx:key="{{index}}">
   <view class='orderdetail-1'>
     <image src=''></image>
     <view class='title'>
@@ -28,5 +28,12 @@
   <view class='orderdetail-3' wx:if="{{current==2}}">
     <view class='paynow'>确认收货</view>
   </view>
+  <view class='orderdetail-3' wx:if="{{current==3}}">
+    <view class='paynow'>删除订单</view>
+  </view>
+  <view class='orderdetail-3' wx:if="{{current==1}}">
+    <view class='paynow2'>等待发货</view>
+  </view>
 </view>
+
 

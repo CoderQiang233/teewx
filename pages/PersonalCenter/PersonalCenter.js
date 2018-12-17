@@ -76,16 +76,56 @@ Page({
   },
 //查看全部订单跳转订单列表页
   ToOderList(){
-    wx.navigateTo({
-      url: '/pages/OrderList/OrderList?current=all',
+    wx.request({
+      url: basepath, // 仅为示例，并非真实的接口地址
+      data: {
+        service: 'ProductOrder.GetOrderBySession',
+        session3rd: wx.getStorageSync('session'),
+      },
+      dataType: 'json',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+       var allShopList= JSON.stringify(res.data.data.info)
+        if(res.data.data.code == 1){
+          wx.navigateTo({
+            url: '/pages/OrderList/OrderList?current=all&list='+allShopList,
+          })
+        }
+      }
     })
   },
 
   //订单不同状态按钮
   ToOderList2(e) {
-    wx.navigateTo({
-      url: '/pages/OrderList/OrderList?current=' + e.currentTarget.dataset.current,
+
+    wx.request({
+      url: basepath, // 仅为示例，并非真实的接口地址
+      data: {
+        service: 'ProductOrder.GetOrderBySession',
+        session3rd: wx.getStorageSync('session'),
+        status: e.currentTarget.dataset.current
+      },
+      dataType: 'json',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        if (res.data.data.code == 1) {
+          wx.navigateTo({
+            url: '/pages/OrderList/OrderList?current=' + e.currentTarget.dataset.current,
+          })
+        }
+      }
     })
+
+
+   
   },
 
   /**

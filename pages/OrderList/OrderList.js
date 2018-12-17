@@ -6,15 +6,20 @@ Page({
    */
   data: {
     current: 0,
+    message:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.current)
+    console.log(options)
+    var arr =new Array();
+    arr=JSON.parse(options.list)
+    console.log(arr)
     this.setData({
-      current: options.current
+      current: options.current,
+      message:arr
     })
   },
 
@@ -33,6 +38,7 @@ Page({
   },
   //tab点击方法
   handleChange({ detail }) {
+    console.log(detail)
     this.setData({
       current: detail.key
     });

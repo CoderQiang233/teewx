@@ -6,11 +6,11 @@
   <i-tab key="3" title="已完成"></i-tab>
 </i-tabs>
 
-<view class='orderdetail' wx:for="" wx:key="{{index}}">
+<view class='orderdetail' wx:for="message" wx:key="{{index}}">
   <view class='orderdetail-1'>
     <image src=''></image>
     <view class='title'>
-      福建雨前龙井
+      {{}}
     </view>
     <view class='orderdetail-1-2'>
       <view class='orderdetail-1-2-1'>￥888</view>

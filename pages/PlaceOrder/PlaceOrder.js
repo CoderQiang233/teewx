@@ -143,8 +143,8 @@ wxpay(rs){
       console.log(rs)
       if (rs.errMsg == 'requestPayment:ok') {
         wx.hideLoading();
-        wx.removeStorageSync('address')
-        wx.removeStorageSync('product')
+        wx.clearStorageSync('address')
+        wx.clearStorageSync('product')
           wx.navigateTo({
             url: '/pages/PayResult/PayResult?result=1',
           })

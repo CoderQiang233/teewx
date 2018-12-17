@@ -43,18 +43,22 @@ Page({
         'Content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success(res) {
-        Dialog.confirm({
-          title: '请登录',
-          confirmButtonText:'登录'
-        }).then(() => {
-          wx.navigateTo({
-            url: '../login/login',
-          })
-        }).catch(() => {
-          wx.switchTab({
-            url: '/pages/index/index'
-          })
-        });
+        console.log(res)
+        if(res.data.data.code==0){
+          Dialog.confirm({
+            title: '请登录',
+            confirmButtonText: '登录'
+          }).then(() => {
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }).catch(() => {
+            wx.switchTab({
+              url: '/pages/index/index'
+            })
+          });
+        }
+        
       }
     })
   },

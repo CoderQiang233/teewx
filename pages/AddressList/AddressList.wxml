@@ -22,11 +22,11 @@
       </view>
 
     </view>
-     <navigator url="../NewAddress/NewAddress?title=1&addressid={{item.id}}" >
-    <view class='address_list_right'>
+     <!-- <navigator url="../NewAddress/NewAddress?title=1&addressid={{item.id}}" > -->
+    <view class='address_list_right' catchtap='gotoNewAddress' data-title='1'  data-addressid='{{item.id}}' data-statue='{{item.state}}'>
       <i-icon type="editor" size="24" color="#8c8c8c" />
     </view>
-    </navigator>
+    <!-- </navigator> -->
   </view>
   <!-- 地址列表--单行结束-->
 </view>

@@ -117,6 +117,7 @@ Page({
      })
    }else{
      console.log("修改地址")
+     console.log(this.data.detailAddress)
      wx.request({
        url: basepath, // 仅为示例，并非真实的接口地址
        data: {
@@ -167,21 +168,24 @@ Page({
         name: info.consignee_name,
         phone: info.consignee_phone,
 
-        region: [info.province, info.county, info.county],
+        region: [info.province, info.city, info.county],
         detail: info.address,
 
       })
 
       if (options.state == 0) {
         that.setData({
-          switch1: false
+          switch1: false,
+          status : 0
         })
 
       } else {
         that.setData({
-          switch1: true
+          switch1: true,
+          status : 1
         })
       }
+     
     }
     
 

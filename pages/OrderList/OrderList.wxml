@@ -1,7 +1,8 @@
 <i-tabs current="{{ current }}" bindchange="handleChange" color="#e23205">
+  <i-tab key="all" title="全部"></i-tab>
   <i-tab key="0" title="待付款"></i-tab>
   <i-tab key="1" title="待发货"></i-tab>
-  <i-tab key="2" title="待收货"></i-tab>
+  <i-tab key="2" title="已发货"></i-tab>
   <i-tab key="3" title="已完成"></i-tab>
 </i-tabs>
 

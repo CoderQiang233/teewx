@@ -12,7 +12,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.current)
+    this.setData({
+      current: options.current
+    })
   },
 
   /**
@@ -33,6 +36,10 @@ Page({
     this.setData({
       current: detail.key
     });
+  },
+  //获取用户订单
+  getUserOredr(){
+    
   },
 
   /**

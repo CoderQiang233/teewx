@@ -1,8 +1,8 @@
 <view class="header">
   <view class='header_top'>
-    <image src='' class='person_head'></image>
+    <image src="{{userinfo.head_portrait}}" class='person_head'></image>
     <view class='person_info'>
-      <view class='person_name'>用户名</view>
+      <view class='person_name'>{{userinfo.nick_name}}</view>
       <!-- <view class='current_shop'>当前店铺：福玉茶叶</view> -->
     </view>
     <!-- <view class='person_level_box'>
@@ -50,19 +50,19 @@
   </view>
 </view>
 <view class='button_section'>
-  <view class='button_section_content'>
+  <view class='button_section_content' data-current='0' bindtap='ToOderList2'>
     <image src='../../images/PersonalCenter/waitpay.png' class='img'></image>
     <view class='title'>待付款</view>
   </view>
-  <view class='button_section_content'>
+  <view class='button_section_content' data-current='1' bindtap='ToOderList2'>
     <image src='../../images/PersonalCenter/daifahuo.png' class='img'></image>
     <view class='title'>待发货</view>
   </view>
-  <view class='button_section_content'>
+  <view class='button_section_content' data-current='2' bindtap='ToOderList2'>
     <image src='../../images/PersonalCenter/yifahuo.png' class='img'></image>
     <view class='title'>已发货</view>
   </view>
-  <view class='button_section_content'>
+  <view class='button_section_content' data-current='3' bindtap='ToOderList2'>
     <image src='../../images/PersonalCenter/yiwancheng.png' class='img'></image>
     <view class='title'>已完成</view>
   </view>

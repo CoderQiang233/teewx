@@ -9,7 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    basepath: basepath
+    basepath: basepath,
+    userinfo:'',
+
   },
 
   /**
@@ -30,9 +32,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getUserInfo();
+  },
+  //onshow时候请求用户信息
+  getUserInfo(){
     var session3rd = wx.getStorageSync('session');
+    let that = this;
     wx.request({
-      url: basepath, 
+      url: basepath,
       data: {
         service: 'login.Index',
         session3rd: session3rd
@@ -44,7 +51,7 @@ Page({
       },
       success(res) {
         console.log(res)
-        if(res.data.data.code==0){
+        if (res.data.data.code == 0) {
           Dialog.confirm({
             title: '请登录',
             confirmButtonText: '登录'
@@ -57,15 +64,27 @@ Page({
               url: '/pages/index/index'
             })
           });
+        } else if (res.data.data.code == 1) {
+          let info = res.data.data.info;
+          that.setData({
+            userinfo: info,
+          })
         }
-        
+
       }
     })
   },
 //查看全部订单跳转订单列表页
   ToOderList(){
     wx.navigateTo({
-      url: '/pages/OrderList/OrderList',
+      url: '/pages/OrderList/OrderList?current=all',
+    })
+  },
+
+  //订单不同状态按钮
+  ToOderList2(e) {
+    wx.navigateTo({
+      url: '/pages/OrderList/OrderList?current=' + e.currentTarget.dataset.current,
     })
   },
 

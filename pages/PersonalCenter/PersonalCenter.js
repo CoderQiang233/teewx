@@ -94,7 +94,7 @@ Page({
     })
   },
   //推广中心按钮
-  ToMyAddress() {
+  ToPopularizeCenter() {
     wx.navigateTo({
       url: '/pages/PopularizeCenter/PopularizeCenter',
     })

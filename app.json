@@ -12,7 +12,8 @@
     "pages/NewAddress/NewAddress",
     "pages/Product/Product",
     "pages/OrderDetail/OrderDetail",
-    "pages/PromotionRules/PromotionRules"
+    "pages/PromotionRules/PromotionRules",
+    "pages/PromotionOrder/PromotionOrder"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -6,7 +6,7 @@
   <i-tab key="3" title="已完成"></i-tab>
 </i-tabs>
 
-<view class='orderdetail'>
+<view class='orderdetail' wx:for="" wx:key="{{index}}">
   <view class='orderdetail-1'>
     <image src=''></image>
     <view class='title'>

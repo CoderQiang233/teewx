@@ -12,7 +12,7 @@ Page({
   data: {
     product: '',
     imagepath: imagepath,
-    address: '',
+    address: { consignee_name:'请选择收货地址'},
   },
 
   /**

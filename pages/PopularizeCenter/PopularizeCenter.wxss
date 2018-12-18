@@ -4,6 +4,7 @@ view {
 
 page {
   background: #f2f2f2;
+  
 }
 button{
   padding: 0;
@@ -14,6 +15,7 @@ button::after{
   border: none;
   border-radius: 0;
 }
+
 .header {
   width: 100vw;
   /* height: 210rpx; */
@@ -287,6 +289,7 @@ button::after{
 .profit {
   width: 100vw;
   background: white;
+  margin-bottom: 16rpx;
 }
 
 .profit .top {
@@ -310,7 +313,7 @@ button::after{
   width: 100%;
   height: calc(100% / 3);
   font-size: 34rpx;
-  color: #373737;
+  color: #FA5C48;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -356,7 +359,7 @@ button::after{
   width: 100%;
   height: calc(100% / 3);
   font-size: 30rpx;
-  color: #373737;
+  color: #FA5C48;
   display: flex;
   align-items: center;
   justify-content: center;

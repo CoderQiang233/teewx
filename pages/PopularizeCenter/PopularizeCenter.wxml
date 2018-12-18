@@ -1,0 +1,164 @@
+<!-- <view class="header">
+  <view class='header_top'>
+    <image src="{{userinfo.head_portrait}}" class='person_head'></image>
+    <view class='person_info'>
+      <view class='person_name'>{{userinfo.nick_name}}</view> -->
+      <!-- <view class='current_shop'>当前店铺：福玉茶叶</view> -->
+    <!-- </view> -->
+    <!-- <view class='person_level_box'>
+      <image src='../../images/PersonalCenter/level.png' class='person_level_image'></image>
+      <view class='person_level_name'>普通销售员</view>
+    </view> -->
+  <!-- </view> -->
+  <!-- <view class='header_bottom'>
+    <view class='header_bottom_text'>升级到分销员，推广佣金比高达 5%</view>
+    <view class='header_bottom_right'>
+      <i-icon type="enter" size="18" color="white" />
+    </view>
+  </view> -->
+<!-- </view> -->
+<!-- <view class='num_section'>
+  <view class='num_section_content'>
+    <view class='num'>0</view>
+    <view class='text'>余额</view>
+  </view>
+  <view class='num_section_content'>
+    <view class='num'>0</view>
+    <view class='text'>余额</view>
+  </view>
+  <view class='num_section_content'>
+    <view class='num'>0</view>
+    <view class='text'>卡</view>
+  </view>
+  <view class='num_section_content'>
+    <view class='num'>0</view>
+    <view class='text'>券</view>
+  </view>
+</view> -->
+<view class='profit'>
+  <view class='top'>
+    <view class='top_top'>当前累计收益(元)</view>
+    <view class='top_middle'>0.00</view>
+    <view class='top_bottom'>本月挣得+50.00元</view>
+  </view>
+  <view class='middle'>
+    <view class='middle_left'>
+      <view class='tuiguang'>累计推广金(元)</view>
+      <view class='tuiguang_num'>0.00</view>
+      <view class='tuiguang_wait'>待结算 0.00元</view>
+    </view>
+    <view class='middle_right'>
+      <view class='tuiguang'>累计消费金(元)</view>
+      <view class='tuiguang_num'>0.00</view>
+      <view class='tuiguang_wait'>本月消费 0.00元</view>
+    </view>
+  </view>
+  <!-- <view class='bottom'>
+    <view class='profit_bottom_left'>可提现佣金 0.00元</view>
+    <view class='profit_bottom_right'>
+      <view class='right_text'>立即提现</view>
+      <view class='icon'>
+        <i-icon type="enter" size="20" color="#80848f" />
+      </view>
+    </view>
+  </view> -->
+</view>
+
+<view class='person_address' bindtap='ToPromotionOrder'>
+  <view class='person_address_box'>
+    <view class='left'>
+      <view class='icon'>
+        <i-icon type="activity" size="22" color="#80848f" />
+      </view>
+      <view class='title'>推广订单</view>
+    </view>
+    <view class='right'>
+      <i-icon type="enter" size="20" color="#80848f" />
+    </view>
+  </view>
+</view>
+<!-- <view class='person_address' >
+  <view class='person_address_box'>
+    <view class='left'>
+      <view class='icon'>
+        <i-icon type="group" size="22" color="#80848f" />
+      </view>
+      <view class='title'>邀请详情</view>
+    </view>
+    <view class='right'>
+      <i-icon type="enter" size="20" color="#80848f" />
+    </view>
+  </view>
+</view> -->
+<view class='person_address' bindtap='ToRules'>
+  <view class='person_address_box'>
+    <view class='left'>
+      <view class='icon'>
+        <i-icon type="document" size="22" color="#80848f" />
+      </view>
+      <view class='title'>推广规则</view>
+    </view>
+    <view class='right'>
+      <i-icon type="enter" size="20" color="#80848f" />
+    </view>
+  </view>
+</view>
+
+<button class='person_address' open-type='contact'>
+  <view class='person_address_box'>
+    <view class='left'>
+      <view class='icon'>
+        <i-icon type="customerservice" size="22" color="#80848f" />
+      </view>
+      <view class='title'>联系客服</view>
+    </view>
+    <view class='right'>
+      <i-icon type="enter" size="20" color="#80848f" />
+    </view>
+  </view>
+</button>
+
+<!-- <view class='card_section'>
+  <image src='../../images/PersonalCenter/card01.png' class='card_img'></image>
+  <image src='../../images/PersonalCenter/card03.png' class='card_img'></image>
+  <image src='../../images/PersonalCenter/card02.png' class='card_img'></image>
+</view> -->
+<!-- <view class='extension'>
+  <view class='extension_list'>
+    <view class='extension_list_top'>1</view>
+    <view class='extension_list_bottom'>累计客户</view>
+  </view>
+  <view class='extension_list'>
+    <view class='extension_list_top'>0</view>
+    <view class='extension_list_bottom'>累计邀请</view>
+  </view>
+  <view class='extension_list'>
+    <view class='extension_list_top'>0</view>
+    <view class='extension_list_bottom'>推广订单</view>
+  </view>
+</view>
+
+<!-- <view class='wenti'>
+    <view class='profit_bottom_left'>常见问题</view>
+    <view class='profit_bottom_right'>
+      <view class='right_text'></view>
+      <view class='icon'>
+        <i-icon type="enter" size="20" color="#80848f" />
+      </view>
+    </view>
+  </view> -->
+<!-- <view class='footer'>
+  <view class='ftb_box'>
+    <view class='small_bt' >店铺主页</view>
+    <view class='small_bt' > 会员中心</view>
+    <view class='small_bt' >关注我们</view>
+    <view  class='small_bt'>线下门店</view>
+    <view  class='small_bt'>店铺信息</view>
+  </view>
+</view> -->
+<view class='footer_img'>
+  <image src='../../images/PersonalCenter/footerimg.png' class='foot_img'></image>
+</view>
+
+
+<van-dialog id="van-dialog" />

@@ -67,7 +67,7 @@
     <view class='title'>已完成</view>
   </view>
 </view>
-<view class='person_address'>
+<view class='person_address' bindtap='ToMyAddress'>
   <view class='person_address_box'>
     <view class='left'>
       <view class='icon'>
@@ -80,7 +80,7 @@
     </view>
   </view>
 </view>
-<view class='person_address'>
+<view class='person_address' bindtap='ToPopularizeCenter'>
   <view class='person_address_box'>
     <view class='left'>
       <view class='icon'>
@@ -93,7 +93,7 @@
     </view>
   </view>
 </view>
-<view class='person_address'>
+<button class='person_address' open-type='contact'>
   <view class='person_address_box'>
     <view class='left'>
       <view class='icon'>
@@ -105,7 +105,7 @@
       <i-icon type="enter" size="20" color="#80848f" />
     </view>
   </view>
-</view>
+</button>
 <view class='person_address' >
   <view class='person_address_box' style='border:0'>
     <view class='left'>

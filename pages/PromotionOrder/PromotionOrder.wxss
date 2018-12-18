@@ -102,3 +102,6 @@ page {
   justify-content: center;
   float: right;
 }
+.title2{
+color: #999;
+}

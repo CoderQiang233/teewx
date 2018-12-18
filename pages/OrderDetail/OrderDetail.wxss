@@ -1,0 +1,110 @@
+view{
+  box-sizing: border-box;
+}
+image{
+  display: block;
+}
+.address{
+  width: 100vw;
+  background: rgb(255, 251, 230);
+  padding: 30rpx 30rpx 30rpx 30rpx;
+}
+.address_top{
+  width: 100%;
+  height: 34rpx;
+  font-size: 30rpx;
+  line-height: 34rpx;
+  color: rgb(37, 37, 37);
+  display: flex;
+}
+.address_phone{
+  margin-left: 90rpx;
+}
+.address_bottom{
+  width: 100%;
+  font-size: 28rpx;
+  color: rgb(99, 99, 99);
+  margin-top: 20rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+
+}
+.order{
+  width: 100vw;
+  background: white;
+  padding: 30rpx 30rpx 30rpx 30rpx;
+  margin-top: 16rpx;
+}
+.order_top,.order_bottom{
+  display: flex;
+  width: 100%;
+  font-size: 30rpx;
+  height: 50rpx;
+  color: rgb(37, 37, 37);
+}
+.order_content{
+  margin-left: 30rpx;
+}
+.order_title{
+  color: #8c8c8c;
+}
+.shop_content{
+  width: 100vw;
+  padding: 20rpx 30rpx;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16rpx;
+}
+.shop_image{
+  width: 200rpx;
+  height: 200rpx;
+  background: greenyellow;
+}
+.shop_right{
+  width: calc(100% - 200rpx);
+  height: 200rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  padding: 10rpx 0 10rpx 20rpx;
+}
+.shop_right_top{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 32rpx;
+  line-height: 40rpx;
+  justify-content: space-between;
+}
+.shop_name{
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  
+}
+.shop_num{
+  width: 20%;
+  overflow: hidden;
+  text-align: end;
+  padding-left: 2rpx;
+}
+.shop_format{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #8c8c8c;
+  margin-top: 4rpx;
+  padding-left: 2rpx;
+}
+.shop_price{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 32rpx;
+}

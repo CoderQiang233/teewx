@@ -1,0 +1,42 @@
+<view class='address'>
+  <view class='address_top'>
+    <view class='address_name'>小明</view>
+    <view class='address_phone'>18235440687</view>
+  </view>
+  <view class='address_bottom'>山西省太原市小店区亲贤北街长治路口茂业天地</view>
+</view>
+
+<view class='order'>
+  <view class='order_top'>
+    <view class='order_title'>订单编号：</view>
+    <view class='order_content'>464548454654</view>
+  </view>
+  <view class='order_bottom'>
+    <view class='order_title'>下单时间：</view>
+    <view class='order_content'> 2018-12-17 13:58:47</view>
+  </view>
+</view>
+
+<view class='shop_content'>
+  <image class='shop_image'></image>
+  <view class='shop_right'>
+    <view class='shop_right_top'>
+      <view class='shop_name' >新疆阿凡提长绒棉超柔毛巾新疆阿凡提长绒棉超柔毛巾
+      新疆阿凡提长绒棉超柔毛巾新疆阿凡提长绒棉超柔毛巾</view>
+      <view class='shop_num'>x1</view>
+    </view>
+    <view class='shop_format'>白银灰Platinum</view>
+    <view class='shop_price'>￥21.90</view>
+  </view>
+</view>
+
+<view class='order'>
+  <view class='order_bottom'>
+    <view class='order_title'>合计总价：</view>
+    <view class='order_content'> ￥116.00</view>
+  </view>
+  <view class='order_bottom'>
+    <view class='order_title'>实付金额：</view>
+    <view class='order_content'> ￥116.00</view>
+  </view>
+</view>

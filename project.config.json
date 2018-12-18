@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -83,7 +83,20 @@
 				{
 					"id": -1,
 					"name": "登录页面",
-					"pathName": "pages/login/login"
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情页面",
+					"pathName": "pages/OrderDetail/OrderDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "推广中心",
+					"pathName": "pages/PopularizeCenter/PopularizeCenter",
+					"query": ""
 				}
 			]
 		}

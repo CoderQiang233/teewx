@@ -33,6 +33,12 @@ Page({
    */
   onShow: function () {
   },
+  //推广订单按钮
+  ToPromotionOrder(){
+    wx.navigateTo({
+      url: '/pages/PromotionOrder/PromotionOrder',
+    })
+  },
  //推广规则按钮
   ToRules(){
     wx.navigateTo({

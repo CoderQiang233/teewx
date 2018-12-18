@@ -20,6 +20,7 @@ Page({
    */
   onLoad: function(options) {
 
+
   },
 
   /**
@@ -103,30 +104,52 @@ Page({
     }else{
       console.log(that.data.address);
       let address = that.data.address.province + that.data.address.city + that.data.address.county + that.data.address.address;
-      let session3rd=wx.getStorageSync('session');
+      let session3rd = wx.getStorageSync('session');
+     
+      let products = {
+        product_id: that.data.product.product_id,
+        name: that.data.product.name,
+        quantity: that.data.product.count,
+        price: that.data.product.market_price,
+        total: that.data.product.market_price * that.data.product.count,
+        first_picture: that.data.product.first_picture,
+      }
+      // 获取商品推荐人
+
+      if (wx.getStorageSync('promoter')) {
+        let promoter = JSON.parse(wx.getStorageSync('promoter'));
+        if (promoter.product == that.data.product.product_id){
+          products.promoter = promoter.promoterId;
+        }
+      }
       wx.request({
-        url: basepath + '?service=Pay.AddOrder',
+        url: basepath + '?service=Pay.AddOrder&XDEBUG_SESSION_START=18357',
         method: "post",
         data:
-        
-        {
-          product:{
-            product_id: that.data.product.product_id,
-            name: that.data.product.name,
-            quantity: that.data.product.count,
-            price: that.data.product.market_price,
+
+          {
+            products: JSON.stringify(products),
+            shipping_address: address,
+            receiver_name: that.data.address.consignee_name,
+            receiver_phone: that.data.address.consignee_phone,
             total: that.data.product.market_price * that.data.product.count,
-            first_picture: that.data.product.first_picture,
-          }
-        },
+            session3rd: session3rd,
+            province_name: that.data.address.province,
+            balance_pay:0,
+            cash_pay: that.data.product.market_price * that.data.product.count
+          },
         dataType: 'json',
         header: {
           'Content-type': 'application/x-www-form-urlencoded'
         },
         success(res) {
           console.log(res);
-         
-          that.wxpay(res);
+          if (res.data.data.code){
+            that.wxpay(res.data.data.info);
+          }else{
+
+          }
+          
         }
       })
     }
@@ -134,11 +157,11 @@ Page({
   //调起微信支付
 wxpay(rs){
   wx.requestPayment({
-    'timeStamp': rs.data.data.info.timeStamp,
-    'nonceStr': rs.data.data.info.nonceStr,
-    'package': rs.data.data.info.package,
+    'timeStamp': rs.timeStamp,
+    'nonceStr': rs.nonceStr,
+    'package': rs.package,
     'signType': 'MD5',
-    'paySign': rs.data.data.info.paySign,
+    'paySign': rs.paySign,
     'success': function (rs) {
       console.log(rs)
       if (rs.errMsg == 'requestPayment:ok') {

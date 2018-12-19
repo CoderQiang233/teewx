@@ -35,6 +35,7 @@ image{
   background: white;
   padding: 30rpx 30rpx 30rpx 30rpx;
   margin-top: 16rpx;
+  margin-bottom: 16rpx;
 }
 .order_top,.order_bottom{
   display: flex;
@@ -55,7 +56,6 @@ image{
   background: white;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 16rpx;
 }
 .shop_image{
   width: 200rpx;

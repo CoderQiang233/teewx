@@ -37,20 +37,20 @@
 </view> -->
 <view class='profit'>
   <view class='top'>
-    <view class='top_top'>当前累计收益(元)</view>
-    <view class='top_middle'>0.00</view>
-    <view class='top_bottom'>本月挣得+50.00元</view>
+    <view class='top_top'>当前可用余额(元)</view>
+    <view class='top_middle'>{{userinfo.balance}}</view>
+    <!-- <view class='top_bottom'>本月挣得+50.00元</view> -->
   </view>
   <view class='middle'>
     <view class='middle_left'>
       <view class='tuiguang'>累计推广金(元)</view>
-      <view class='tuiguang_num'>0.00</view>
-      <view class='tuiguang_wait'>待结算 0.00元</view>
+      <view class='tuiguang_num'>{{userinfo.PromotionMoney}}</view>
+      <!-- <view class='tuiguang_wait'>待结算 0.00元</view> -->
     </view>
     <view class='middle_right'>
       <view class='tuiguang'>累计消费金(元)</view>
-      <view class='tuiguang_num'>0.00</view>
-      <view class='tuiguang_wait'>本月消费 0.00元</view>
+      <view class='tuiguang_num'>{{userinfo.consumptionMoney}}</view>
+      <!-- <view class='tuiguang_wait'>本月消费 0.00元</view> -->
     </view>
   </view>
   <!-- <view class='bottom'>

@@ -10,7 +10,7 @@ Page({
    */
   data: {
     basepath: basepath,
-    userinfo:'',
+    userinfo: { balance: 0, PromotionMoney: 0, consumptionMoney:0},
 
   },
 
@@ -32,6 +32,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.showLoading({
+      title: '加载中...',
+      mask:true
+    })
+    this.getMoneyInfo();
   },
   //推广订单按钮
   ToPromotionOrder(){
@@ -43,6 +48,34 @@ Page({
   ToRules(){
     wx.navigateTo({
       url: '/pages/PromotionRules/PromotionRules',
+    })
+  },
+  //获取用户推广金
+  getMoneyInfo(){
+    let that=this;
+    wx.request({
+      url: basepath + '?service=PromotionCenter.GetInfo',
+      method: "post",
+      data: {
+        session: wx.getStorageSync("session")
+      },
+      dataType: 'json',
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded'
+      },
+      success(res) {
+        wx.hideLoading();
+        console.log(res);
+        let code = res.data.data.code
+        let info = res.data.data.info
+        if (code == 1) {
+          info.balance = parseFloat(info.balance);
+          
+          that.setData({
+            userinfo: res.data.data.info
+          })
+        }
+      }
     })
   },
 

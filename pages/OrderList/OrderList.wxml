@@ -5,15 +5,15 @@
   <i-tab key="2" title="已发货"></i-tab>
   <i-tab key="3" title="已完成"></i-tab>
 </i-tabs>
-<view class='orderdetail' wx:for="{{message}}" wx:key="{{index}}">
-  <view class='orderdetail-1'wx:for="{{item.product}}">
-    <image  src='{{imagepath+ item.first_picture}}'></image>
-    </view>
-    <view class='title' >
+
+<view class='orderdetail' wx:for="{{message}}" wx:key="{{index}}" data-pay_id='{{item.pay_id}}' catchtap='todetail'>
+  <view class='orderdetail-1' wx:for="{{item.product}}" wx:key="{{index}}">
+    <image src='{{imagepath+ item.first_picture}}' ></image>
+    <view class='title'>
       {{item.name}}
     </view>
     <view class='orderdetail-1-2'>
-      <view class='orderdetail-1-2-1'>{{item.price}}</view>
+      <view class='orderdetail-1-2-1'>￥{{item.price}}</view>
       <view class='orderdetail-1-2-11'>x{{item.quantity}}</view>
     </view>
   </view>
@@ -27,17 +27,22 @@
     <view class='paynow'>取消订单</view>
   </view>
   <view class='orderdetail-3' wx:if="{{item.pay==2}}">
-    <view class='paynow'>确认收货</view>
+    <view class='paynow' data-order_id='{{item.order_id}}' catchtap='handleOpen1'>确认收货</view>
   </view>
 
-  <view class='orderdetail-3' wx:if="{{item.pay==3}}">
+  <!-- <view class='orderdetail-3' wx:if="{{item.pay==3}}">
     <view class='paynow'>删除订单</view>
-
-  <view class='orderdetail-3' wx:if="{{current==3}}">
+</view> -->
+  <view class='orderdetail-3' wx:if="{{item.pay==3}}">
     <view class='paynow2'>已完成</view>
-
   </view>
   <view class='orderdetail-3' wx:if="{{item.pay==1}}">
     <view class='paynow2'>等待发货</view>
   </view>
 </view>
+
+<i-modal title="是否确认收货？" visible="{{ visible1 }}" bind:ok="handleOK1" bind:cancel="handleClose1">
+    <view>请确认您已收到商品</view>
+</i-modal>
+
+<i-toast id="toast" />

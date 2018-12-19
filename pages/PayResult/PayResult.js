@@ -1,4 +1,7 @@
 // pages/PayResult/PayResult.js
+const app = getApp()
+var basepath = app.basePath;
+var imagepath = app.imagepath;
 Page({
 
   /**
@@ -6,6 +9,7 @@ Page({
    */
   data: {
     PayStatus:1,
+    pay_id:0
   },
 
   /**
@@ -13,6 +17,9 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
+    this.setData({
+      pay_id: options.pay_id
+    })
     if (options.result==1){
       this.setData({
         PayStatus:1,
@@ -51,8 +58,56 @@ Page({
   },
   //重新支付
   Repayment(){
-    wx.navigateTo({
-      url: '/pages/PlaceOrder/PlaceOrder',
+    // wx.navigateTo({
+    //   url: '/pages/PlaceOrder/PlaceOrder',
+    // })
+    let _this=this;
+    let session3rd = wx.getStorageSync('session');
+    
+    wx.request({
+      url: basepath + '?service=Pay.RePay&XDEBUG_SESSION_START=18357',
+      method: "post",
+      data:
+
+        {
+          pay_id: _this.data.pay_id,
+          session3rd: session3rd,
+        },
+      dataType: 'json',
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded'
+      },
+      success(res) {
+        console.log(res);
+        if (res.data.data.code) {
+          _this.wxpay(res.data.data.info);
+        } else {
+
+        }
+
+      }
+    })
+  },
+  //调起微信支付
+  wxpay(rs) {
+    wx.requestPayment({
+      'timeStamp': rs.timeStamp,
+      'nonceStr': rs.nonceStr,
+      'package': rs.package,
+      'signType': 'MD5',
+      'paySign': rs.paySign,
+      'success': function (rs) {
+        console.log(rs)
+        if (rs.errMsg == 'requestPayment:ok') {
+          wx.hideLoading();
+          wx.navigateTo({
+            url: '/pages/PayResult/PayResult?result=1',
+          })
+        }
+      },
+      'fail': function (rs) {
+        wx.hideLoading();
+      },
     })
   },
   /**

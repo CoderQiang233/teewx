@@ -144,7 +144,7 @@ Page({
         success(res) {
           console.log(res);
           if (res.data.data.code){
-            that.wxpay(res.data.data.info);
+            that.wxpay(res.data.data.info, res.data.data.pay_id);
           }else{
 
           }
@@ -154,7 +154,7 @@ Page({
     }
   },
   //调起微信支付
-wxpay(rs){
+wxpay(rs,pay_id){
   wx.requestPayment({
     'timeStamp': rs.timeStamp,
     'nonceStr': rs.nonceStr,
@@ -168,14 +168,14 @@ wxpay(rs){
         wx.removeStorageSync('address')
         wx.removeStorageSync('product')
           wx.navigateTo({
-            url: '/pages/PayResult/PayResult?result=1',
+            url: '/pages/PayResult/PayResult?result=1&pay_id=' + pay_id,
           })
       }
     },
     'fail': function (rs) {
       wx.hideLoading();
         wx.navigateTo({
-          url: '/pages/PayResult/PayResult?result=0',
+          url: '/pages/PayResult/PayResult?result=0&pay_id=' + pay_id,
         })
     },
   })

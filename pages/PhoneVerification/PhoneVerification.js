@@ -127,6 +127,7 @@ Page({
                   service: 'Login.UserRegister',
                   nickName: wx.getStorageSync('userMessage').nickName,
                   phone:that.data.phonenum,
+                  name: wx.getStorageSync('userMessage').nickName,
                   headPortrait: wx.getStorageSync('userMessage').avatarUrl,
                   session3rd: wx.getStorageSync('session')
                 },
@@ -141,6 +142,12 @@ Page({
                        delta:2
                     })
                   }
+                  if(res.data.data.code ==2){
+                    $Toast({
+                      content: '手机已验证',
+                      type: 'error'
+                    });
+                  }
                 }
               })
             }
@@ -154,6 +161,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var a  = new Date();
+    console.log(a)
     // wx.getStorage({
     //   key: 'session',
     //   success: function (res) {

@@ -43,6 +43,9 @@ Page({
   detailAddress_input:function(e){
      this.data.detailAddress=e.detail.value
     console.log(this.data.detailAddress);
+    this.setData({
+      detail: this.data.detailAddress
+    })
   },
   //点击保存按钮
   commite(){
@@ -77,6 +80,7 @@ Page({
     //插入新地址 
    if(this.data.write == 0){
      console.log("插入地址")
+     console.log(this.data.detailAddress)
      wx.request({
        url: basepath, // 仅为示例，并非真实的接口地址
        data: {
@@ -117,6 +121,7 @@ Page({
      })
    }else{
      console.log("修改地址")
+     console.log(this.data.detail)
      console.log(this.data.detailAddress)
      wx.request({
        url: basepath, // 仅为示例，并非真实的接口地址
@@ -124,7 +129,7 @@ Page({
          service: 'MyAddresss.UpdateAddressById',
          id: this.data.menberid,
          consignee_name: this.data.name,
-         address: this.data.detailAddress,
+         address: this.data.detail,
          consignee_phone: this.data.phone,
          member_id: this.data.userid,
          city: this.data.region[1],

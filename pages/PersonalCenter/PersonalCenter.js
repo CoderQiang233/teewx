@@ -10,32 +10,33 @@ Page({
    */
   data: {
     basepath: basepath,
-    userinfo:'',
+    userinfo: '',
 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     this.getUserInfo();
+  
   },
   //onshow时候请求用户信息
-  getUserInfo(){
+  getUserInfo() {
     var session3rd = wx.getStorageSync('session');
     let that = this;
     wx.request({
@@ -74,92 +75,65 @@ Page({
       }
     })
   },
-//查看全部订单跳转订单列表页
-  ToOderList(){
-    wx.request({
-      url: basepath, // 仅为示例，并非真实的接口地址
-      data: {
-        service: 'ProductOrder.GetOrderBySession',
-        session3rd: wx.getStorageSync('session'),
-      },
-      dataType: 'json',
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
-      },
-      success(res) {
-        console.log(res.data)
-       var allShopList= JSON.stringify(res.data.data.info)
-        if(res.data.data.code == 1){
-          wx.navigateTo({
-            url: '/pages/OrderList/OrderList?current=all&list='+allShopList,
-          })
-        }
-      }
+  //查看全部订单跳转订单列表页
+  ToOderList() {
+
+    wx.navigateTo({
+      url: '/pages/OrderList/OrderList?current=all'
     })
   },
 
   //订单不同状态按钮
   ToOderList2(e) {
-
-    wx.request({
-      url: basepath, // 仅为示例，并非真实的接口地址
-      data: {
-        service: 'ProductOrder.GetOrderBySession',
-        session3rd: wx.getStorageSync('session'),
-        status: e.currentTarget.dataset.current
-      },
-      dataType: 'json',
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
-      },
-      success(res) {
-        console.log(res.data)
-        if (res.data.data.code == 1) {
-          wx.navigateTo({
-            url: '/pages/OrderList/OrderList?current=' + e.currentTarget.dataset.current,
-          })
-        }
-      }
+    wx.navigateTo({
+      url: '/pages/OrderList/OrderList?current=' + e.currentTarget.dataset.current,
     })
-
-
-   
+  },
+  //我的地址按钮
+  ToMyAddress() {
+    wx.navigateTo({
+      url: '/pages/AddressList/AddressList',
+    })
+  },
+  //推广中心按钮
+  ToMyAddress() {
+    wx.navigateTo({
+      url: '/pages/PopularizeCenter/PopularizeCenter',
+    })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

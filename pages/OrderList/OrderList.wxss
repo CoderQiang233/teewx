@@ -90,3 +90,14 @@ page {
   margin-top: 14rpx;
   padding-top: 14rpx;
 }
+.paynow2{
+  width: 140rpx;
+  height: 40rpx;
+  color: #8c8c8c;
+  border: 1rpx solid #8c8c8c;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+}

@@ -5,28 +5,32 @@
   <i-tab key="2" title="已发货"></i-tab>
   <i-tab key="3" title="已完成"></i-tab>
 </i-tabs>
-
-<view class='orderdetail' wx:for="message" wx:key="{{index}}">
-  <view class='orderdetail-1'>
-    <image src=''></image>
-    <view class='title'>
-      {{}}
+<view class='orderdetail' wx:for="{{message}}" wx:key="{{index}}">
+  <view class='orderdetail-1'wx:for="{{item.product}}">
+    <image  src='{{imagepath+ item.first_picture}}'></image>
+    <view class='title' >
+      {{item.name}}
     </view>
     <view class='orderdetail-1-2'>
-      <view class='orderdetail-1-2-1'>￥888</view>
-      <view class='orderdetail-1-2-11'>x1</view>
+      <view class='orderdetail-1-2-1'>{{item.price}}</view>
+      <view class='orderdetail-1-2-11'>x{{item.quantity}}</view>
     </view>
   </view>
   <view class='orderdetail-2'>
-    <view class='orderdetail-2-1'>2018-12-11 16:13:48</view>
+    <view class='orderdetail-2-1'>{{item.create_time}}</view>
     <view class='orderdetail-2-11'>总计：
-      <view class='orderdetail-2-2'>888</view> 元</view>
+      <view class='orderdetail-2-2'>{{item.total}}</view> 元</view>
   </view>
-  <view class='orderdetail-3' wx:if="{{current==0}}">
+  <view class='orderdetail-3' wx:if="{{item.pay==0}}">
     <view class='paynow'>立即支付</view>
   </view>
-  <view class='orderdetail-3' wx:if="{{current==2}}">
+  <view class='orderdetail-3' wx:if="{{item.pay==2}}">
     <view class='paynow'>确认收货</view>
   </view>
+  <view class='orderdetail-3' wx:if="{{item.pay==3}}">
+    <view class='paynow'>删除订单</view>
+  </view>
+  <view class='orderdetail-3' wx:if="{{item.pay==1}}">
+    <view class='paynow2'>等待发货</view>
+  </view>
 </view>
-

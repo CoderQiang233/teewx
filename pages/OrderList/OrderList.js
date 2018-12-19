@@ -1,4 +1,7 @@
 // pages/OrderList/OrderList.js
+const app = getApp()
+var imagepath =app.imagepath;
+var basepath = app.basePath;
 Page({
 
   /**
@@ -6,20 +9,17 @@ Page({
    */
   data: {
     current: 0,
-    message:[]
+    message:[],
+    imagepath:imagepath
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    var arr =new Array();
-    arr=JSON.parse(options.list)
-    console.log(arr)
+   
     this.setData({
       current: options.current,
-      message:arr
     })
   },
 
@@ -34,6 +34,58 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getAllorderList(this.data.current)
+
+  
+  },
+  getAllorderList(current){
+  
+    var that = this
+    console.log(this.data.current)
+    if (this.data.current == "all") {
+      wx.request({
+        url: basepath, // 仅为示例，并非真实的接口地址
+        data: {
+          service: 'ProductOrder.GetOrderBySession',
+          session3rd: wx.getStorageSync('session'),
+        },
+        dataType: 'json',
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        },
+        success(res) {
+          console.log(res.data, "我是全部的列表")
+         
+          that.setData({
+            message: res.data.data.info
+          })
+
+        }
+      })
+    } else {      //各状态的订单列表
+      wx.request({
+        url: basepath, // 仅为示例，并非真实的接口地址
+        data: {
+          service: 'ProductOrder.GetOrderBySession',
+          session3rd: wx.getStorageSync('session'),
+          status: that.data.current
+        },
+        dataType: 'json',
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        },
+        success(res) {
+          console.log(res.data, "我是第" + that.data.current)
+          that.setData({
+            message: res.data.data.info,
+
+          })
+
+        }
+      })
+    }
 
   },
   //tab点击方法
@@ -42,6 +94,7 @@ Page({
     this.setData({
       current: detail.key
     });
+    this.getAllorderList(this.data.current)
   },
   //获取用户订单
   getUserOredr(){

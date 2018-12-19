@@ -8,6 +8,7 @@
 <view class='orderdetail' wx:for="{{message}}" wx:key="{{index}}">
   <view class='orderdetail-1'wx:for="{{item.product}}">
     <image  src='{{imagepath+ item.first_picture}}'></image>
+    </view>
     <view class='title' >
       {{item.name}}
     </view>
@@ -23,12 +24,18 @@
   </view>
   <view class='orderdetail-3' wx:if="{{item.pay==0}}">
     <view class='paynow'>立即支付</view>
+    <view class='paynow'>取消订单</view>
   </view>
   <view class='orderdetail-3' wx:if="{{item.pay==2}}">
     <view class='paynow'>确认收货</view>
   </view>
+
   <view class='orderdetail-3' wx:if="{{item.pay==3}}">
     <view class='paynow'>删除订单</view>
+
+  <view class='orderdetail-3' wx:if="{{current==3}}">
+    <view class='paynow2'>已完成</view>
+
   </view>
   <view class='orderdetail-3' wx:if="{{item.pay==1}}">
     <view class='paynow2'>等待发货</view>

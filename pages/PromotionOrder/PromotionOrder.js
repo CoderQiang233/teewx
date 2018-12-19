@@ -1,16 +1,10 @@
-// pages/PersonalCenter/PersonalCenter.js
-const app = getApp()
-var basepath = app.basePath;
-var imagepath = app.imagepath;
-import Dialog from '../../vant/dialog/dialog';
+// pages/PromotionOrder/PromotionOrder.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    basepath: basepath,
-    userinfo:'',
 
   },
 
@@ -32,18 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  },
-  //推广订单按钮
-  ToPromotionOrder(){
-    wx.navigateTo({
-      url: '/pages/PromotionOrder/PromotionOrder',
-    })
-  },
- //推广规则按钮
-  ToRules(){
-    wx.navigateTo({
-      url: '/pages/PromotionRules/PromotionRules',
-    })
+
   },
 
   /**

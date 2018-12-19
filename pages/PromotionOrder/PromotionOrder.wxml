@@ -1,0 +1,22 @@
+<view class='orderdetail'  wx:key="{{index}}">
+  <view class='orderdetail-1'>
+    <image src=''></image>
+    <view class='title'>
+      福建雨前龙井
+      <view class='title2'>
+      购买人：
+    </view>
+    </view>
+    
+    <view class='orderdetail-1-2'>
+      <view class='orderdetail-1-2-1'>￥888</view>
+      <view class='orderdetail-1-2-11'>x1</view>
+    </view>
+  </view>
+  <view class='orderdetail-2'>
+    <view class='orderdetail-2-1'>2018-12-11 16:13:48</view>
+    <view class='orderdetail-2-11'>返现￥
+      <view class='orderdetail-2-2'>888</view> 元</view>
+  </view>
+</view>
+

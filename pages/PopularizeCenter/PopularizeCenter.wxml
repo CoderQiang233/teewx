@@ -64,7 +64,7 @@
   </view> -->
 </view>
 
-<view class='person_address'>
+<view class='person_address' bindtap='ToPromotionOrder'>
   <view class='person_address_box'>
     <view class='left'>
       <view class='icon'>
@@ -77,7 +77,7 @@
     </view>
   </view>
 </view>
-<view class='person_address' >
+<!-- <view class='person_address' >
   <view class='person_address_box'>
     <view class='left'>
       <view class='icon'>
@@ -89,7 +89,7 @@
       <i-icon type="enter" size="20" color="#80848f" />
     </view>
   </view>
-</view>
+</view> -->
 <view class='person_address' bindtap='ToRules'>
   <view class='person_address_box'>
     <view class='left'>

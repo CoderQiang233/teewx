@@ -49,13 +49,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    var promoterId = 409;
     console.log(options);
     if (options.id) {
       this.setData({
         id: options.id
       })
+      if (promoterId){
+       var promoter={
+         'product': options.id,
+         'promoterId': promoterId
+       }
+        wx.setStorage({
+          key: "promoter",
+          data: JSON.stringify(promoter)
+        })
+      }
     }
+
+    
 
   },
 

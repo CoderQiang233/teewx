@@ -162,7 +162,7 @@ Page({
    */
   onLoad: function (options) {
     var a  = new Date();
-    console.log(a)
+   
     // wx.getStorage({
     //   key: 'session',
     //   success: function (res) {

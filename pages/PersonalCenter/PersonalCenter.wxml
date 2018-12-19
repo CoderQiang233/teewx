@@ -80,7 +80,7 @@
     </view>
   </view>
 </view>
-<view class='person_address'>
+<view class='person_address' bindtap='ToPopularizeCenter'>
   <view class='person_address_box'>
     <view class='left'>
       <view class='icon'>

@@ -59,7 +59,7 @@ Page({
       if (options.promoterId){
        var promoter={
          'product': options.id,
-         'promoterId': promoterId
+         'promoterId': options.promoterId
        }
         wx.setStorage({
           key: "promoter",

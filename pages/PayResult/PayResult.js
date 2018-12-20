@@ -100,8 +100,8 @@ Page({
         console.log(rs)
         if (rs.errMsg == 'requestPayment:ok') {
           wx.hideLoading();
-          wx.navigateTo({
-            url: '/pages/PayResult/PayResult?result=1',
+          wx.switchTab({
+            url: '/pages/PersonalCenter/PersonalCenter?to=OrderList',
           })
         }
       },

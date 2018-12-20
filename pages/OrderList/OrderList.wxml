@@ -24,7 +24,7 @@
   </view>
   <view class='orderdetail-3' wx:if="{{item.pay==0}}">
     <view class='paynow'>立即支付</view>
-    <view class='paynow'>取消订单</view>
+    <view class='paynow' catchtap='deleteBut' data-order_id='{{item.order_id}}'>取消订单</view>
   </view>
   <view class='orderdetail-3' wx:if="{{item.pay==2}}">
     <view class='paynow' data-order_id='{{item.order_id}}' catchtap='handleOpen1'>确认收货</view>
@@ -44,5 +44,9 @@
 <i-modal title="是否确认收货？" visible="{{ visible1 }}" bind:ok="handleOK1" bind:cancel="handleClose1">
     <view>请确认您已收到商品</view>
 </i-modal>
+
+<i-modal title="是否取消订单？" visible="{{ visible2 }}" bind:ok="handleOK2" bind:cancel="handleClose1">
+</i-modal>
+
 
 <i-toast id="toast" />

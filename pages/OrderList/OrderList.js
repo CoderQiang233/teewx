@@ -13,6 +13,7 @@ Page({
     message:[],
     imagepath:imagepath,
     visible1:false,
+    visible2: false,
     order_id:'',
   },
 
@@ -142,10 +143,11 @@ Page({
 //弹框点击取消
   handleClose1() {
     this.setData({
-      visible1: false
+      visible1: false,
+      visible2: false
     });
   },
-  //弹框点击确定
+  //弹框点击确定1
   handleOK1(){
     this.setData({
       visible1: false,
@@ -160,6 +162,58 @@ Page({
     console.log(e.currentTarget.dataset.pay_id);
     wx.navigateTo({
       url: '/pages/OrderDetail/OrderDetail?pay_id=' + e.currentTarget.dataset.pay_id,
+    })
+  },
+  //删除订单
+  deleteBut(e){
+    let order_id = e.currentTarget.dataset.order_id
+    this.setData({
+      visible2: true,
+      order_id: order_id,
+    });
+    // wx.showLoading({
+    //   title: '删除订单中...',
+    // })
+    // 
+
+  },
+  //弹框点击确定2
+  handleOK2() {
+    this.setData({
+      visible2: false,
+    })
+    wx.showLoading({
+      title: '取消订单中...',
+    })
+    this.deleteOrder(this.data.order_id);
+  },
+
+  //删除订单按钮
+  deleteOrder(e){
+    let that = this;
+    wx.request({
+      url: basepath, // 仅为示例，并非真实的接口地址
+      data: {
+        service: 'ProductOrder.DeleteProductOrderById',
+        product_order_id: e,
+      },
+      dataType: 'json',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        console.log(res);
+        if (res.data.data.code == 1) {
+          wx.hideLoading();
+          $Toast({
+            content: '取消成功',
+            type: 'success',
+            mask: false
+          });
+          that.getAllorderList(that.data.current);
+        }
+      }
     })
   },
 

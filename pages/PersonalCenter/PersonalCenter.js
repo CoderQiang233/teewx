@@ -19,11 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (options.to){
-      this.setData({
-        url: options.to
-      })
-    }
+   
 
   },
 
@@ -38,10 +34,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    if (this.data.url == 'OrderList'){
+    let to=wx.getStorageSync('to');
+    if (to == 'OrderList'){
       wx.navigateTo({
-        url: '/pages/OrderList/OrderList',
+        url: '/pages/OrderList/OrderList?current=1',
       })
+      wx.removeStorageSync('to');
     }
     this.getUserInfo();
   

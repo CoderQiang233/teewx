@@ -272,6 +272,8 @@ wxpay(rs,pay_id){
         wx.hideLoading();
         wx.removeStorageSync('address')
         wx.removeStorageSync('product')
+        wx.removeStorageSync('promoter')
+        
           wx.navigateTo({
             url: '/pages/PayResult/PayResult?result=1&pay_id=' + pay_id,
           })

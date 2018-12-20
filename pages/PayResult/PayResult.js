@@ -46,8 +46,9 @@ Page({
   },
   //查看订单
   toOrderList(){
+    wx.setStorageSync('to', 'OrderList');
     wx.switchTab({
-      url: '/pages/PersonalCenter/PersonalCenter?to=OrderList',
+      url: '/pages/PersonalCenter/PersonalCenter',
     })
   },
   //返回首页
@@ -100,8 +101,11 @@ Page({
         console.log(rs)
         if (rs.errMsg == 'requestPayment:ok') {
           wx.hideLoading();
+
+          wx.setStorageSync('to', 'OrderList');
           wx.switchTab({
-            url: '/pages/PersonalCenter/PersonalCenter?to=OrderList',
+            url: '/pages/PersonalCenter/PersonalCenter',
+
           })
         }
       },

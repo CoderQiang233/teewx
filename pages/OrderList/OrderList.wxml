@@ -23,7 +23,7 @@
       <view class='orderdetail-2-2'>{{item.total}}</view> 元</view>
   </view>
   <view class='orderdetail-3' wx:if="{{item.pay==0}}">
-    <view class='paynow'>立即支付</view>
+    <view class='paynow' data-pay_id='{{item.pay_id}}' catchtap='Repayment'>立即支付</view>
     <view class='paynow' catchtap='deleteBut' data-order_id='{{item.order_id}}'>取消订单</view>
   </view>
   <view class='orderdetail-3' wx:if="{{item.pay==2}}">

@@ -97,9 +97,16 @@ Page({
   },
   //推广中心按钮
   ToPopularizeCenter() {
-    wx.navigateTo({
-      url: '/pages/PopularizeCenter/PopularizeCenter',
-    })
+    if (this.data.userinfo.promotion==1){
+      wx.navigateTo({
+        url: '/pages/PopularizeCenter/PopularizeCenter',
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/PromotionRules/PromotionRules',
+      })
+    }
+    
   },
 
   /**

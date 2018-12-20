@@ -1,11 +1,16 @@
-// pages/PromotionOrder/PromotionOrder.js
+const app = getApp()
+var basepath = app.basePath;
+var imagepath = app.imagepath;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    orderlist:[],
+    imagepath:imagepath,
+    loading:true,
+    show:true,
   },
 
   /**
@@ -26,7 +31,44 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      loading:true
+    })
+    this.getOrder();
+  },
 
+  //获取用户推广订单
+  getOrder(){
+    let that=this;
+    wx.request({
+      url: basepath + '?service=PromotionCenter.GetOrder',
+      dataType: 'json',
+      method: 'post',
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        session: wx.getStorageSync('session')
+      },
+      success: function (rs) {
+        that.setData({
+          loading: false,
+          show:true,
+        })
+        let code=rs.data.data.code;
+        let info=rs.data.data.info;
+        if(code==1){
+          that.setData({
+            orderlist:info,
+            show: false,
+          })
+        }else{
+          that.setData({
+            show: true,
+          })
+        }
+      }
+    })
   },
 
   /**

@@ -1,22 +1,30 @@
-<view class='orderdetail'  wx:key="{{index}}">
+<view class='orderdetail'  wx:for="{{orderlist}}" wx:key="{{index}}">
   <view class='orderdetail-1'>
-    <image src=''></image>
+    <image src='{{imagepath + item.first_picture}}'></image>
     <view class='title'>
-      福建雨前龙井
+      {{item.name}}
       <view class='title2'>
-      购买人：
+      购买人：{{item.Purchaser_name}}
     </view>
     </view>
     
     <view class='orderdetail-1-2'>
-      <view class='orderdetail-1-2-1'>￥888</view>
-      <view class='orderdetail-1-2-11'>x1</view>
+      <view class='orderdetail-1-2-1'>￥{{item.price}}</view>
+      <view class='orderdetail-1-2-11'>x{{item.quantity}}</view>
     </view>
   </view>
-  <view class='orderdetail-2'>
-    <view class='orderdetail-2-1'>2018-12-11 16:13:48</view>
-    <view class='orderdetail-2-11'>返现￥
-      <view class='orderdetail-2-2'>888</view> 元</view>
+  <view class='orderdetail-2' wx:if="{{item.history.status==1}}">
+    <view class='orderdetail-2-1'>{{item.order.create_time}}</view>
+    <view class='orderdetail-2-11'>已返现￥
+      <view class='orderdetail-2-2'>{{item.history.total}}</view> 元</view>
+  </view>
+  <view class='orderdetail-2' wx:if="{{item.history.status==0}}">
+    <view class='orderdetail-2-1'>{{item.order.create_time}}</view>
+    <view class='orderdetail-2-11'>待返现￥
+      <view class='orderdetail-2-2'>{{item.history.total}}</view> 元</view>
   </view>
 </view>
+
+
+<i-load-more tip="暂无数据" loading="{{ loading }}" wx:if="{{show}}"/>
 

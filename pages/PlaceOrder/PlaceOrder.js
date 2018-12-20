@@ -94,7 +94,7 @@ Page({
       mask:true
     })
     let that=this;
-    if(!this.data.address){
+    if (!this.data.address || this.data.address.consignee_name =='请选择收货地址'){
       wx.hideLoading();
       $Toast({
         content: '请选择收货地址',

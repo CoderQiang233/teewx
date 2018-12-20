@@ -29,12 +29,19 @@
     </view>
   </view>
 </view>
+<view class='the_balance' wx:if="{{memberBalance!=0}}">
+<van-switch-cell
+  title="可用余额：￥{{memberBalance}}"
+  checked="{{ balanceChecked }}"
+  bind:change="onBalanceChange"
+/>
+</view>
 <view class='the_way'>
   <view class='way_title'>配送方式</view>
   <view class='way_content'>快递 包邮</view>
 </view>
 <view class='amount'>
-  <view class='money'>合计：￥ {{product.market_price * product.count}}</view>
+  <view class='money'>合计：￥ {{cash_pay}}</view>
   <view class='submit' bindtap='submitOrder'>提交订单</view>
 </view>
 <i-toast id="toast" />

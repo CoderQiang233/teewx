@@ -101,9 +101,11 @@ Page({
         console.log(rs)
         if (rs.errMsg == 'requestPayment:ok') {
           wx.hideLoading();
+
           wx.setStorageSync('to', 'OrderList');
           wx.switchTab({
             url: '/pages/PersonalCenter/PersonalCenter',
+
           })
         }
       },

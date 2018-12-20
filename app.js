@@ -1,4 +1,6 @@
 //app.js
+// var bpath = 'https://teeshop.zgftlm.com/Public/weixin/';
+// var imagepath = "https://teeshop.zgftlm.com/Public/upload";
 var bpath = 'http://localhost/Public/weixin/';
 var imagepath = "http://localhost/Public/upload";
 App({

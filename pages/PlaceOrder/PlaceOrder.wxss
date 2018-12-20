@@ -193,3 +193,7 @@ image{
   justify-content: center;     
   font-size: 28rpx;            
 }
+
+.van-switch--on {
+  background-color: #E6633E !important;
+}

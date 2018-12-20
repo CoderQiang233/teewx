@@ -12,6 +12,7 @@ Page({
     code:'',
     disable:false,
     getcode:'获取验证码',
+    bePromoter:0
   },
   
   getBtn: function (options) {
@@ -104,7 +105,9 @@ Page({
           data: {
             service: "Login.CheckCode",
             phone: that.data.phonenum,
-            vcode: that.data.code
+            vcode: that.data.code,
+            
+            
           },
           header: {
             'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -129,7 +132,9 @@ Page({
                   phone:that.data.phonenum,
                   name: wx.getStorageSync('userMessage').nickName,
                   headPortrait: wx.getStorageSync('userMessage').avatarUrl,
-                  session3rd: wx.getStorageSync('session')
+                  session3rd: wx.getStorageSync('session'),
+                  is_promoter:that.data.bePromoter,
+                  XDEBUG_SESSION_START: 12886
                 },
                 header: {
                   'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -185,6 +190,13 @@ Page({
     //     })
     //    }
     // })
+    if(options.from){
+      if(options.from=='promotion'){
+        this.setData({
+          bePromoter:1
+        })
+      }
+    }
   },
 
   /**

@@ -1,1 +1,9 @@
-{}
+{
+  "navigationBarTitleText": "合伙人计划",
+  
+  "usingComponents": {
+    "i-button": "../../iview/button/index",
+    "van-toast": "../../vant/toast/index",
+    "van-dialog": "../../vant/dialog/index"
+  }
+}

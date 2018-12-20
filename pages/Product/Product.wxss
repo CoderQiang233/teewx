@@ -168,5 +168,6 @@ swiper-item image{
   width: 80rpx;
   height: 80rpx;
   text-align: center;
-  line-height: 80rpx
+  line-height: 80rpx;
+  padding: 0;
 }

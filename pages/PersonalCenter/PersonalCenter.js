@@ -97,7 +97,7 @@ Page({
   },
   //推广中心按钮
   ToPopularizeCenter() {
-    if (this.data.userinfo.promotion==1){
+    if (this.data.userinfo.is_promoter==1){
       wx.navigateTo({
         url: '/pages/PopularizeCenter/PopularizeCenter',
       })

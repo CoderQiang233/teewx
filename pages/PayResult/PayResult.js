@@ -46,13 +46,13 @@ Page({
   },
   //查看订单
   toOrderList(){
-    wx.navigateTo({
-      url: '/pages/OrderList/OrderList',
+    wx.switchTab({
+      url: '/pages/PersonalCenter/PersonalCenter?to=OrderList',
     })
   },
   //返回首页
   toIndex() {
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/index/index',
     })
   },

@@ -34,13 +34,14 @@
 
   <view class='paybtn'>
     <view class='paybtn_1'>
-      <i-button inline="{{true}}" long="true" i-class="paybtn_1_right" open-type="getUserInfo" bind:getuserinfo='goToOrderSubmit'>立即购买</i-button>
+      <i-button inline="{{true}}" long="true" i-class="paybtn_1_right" open-type="getUserInfo" bind:getuserinfo='goToOrderSubmit'>立即购买  </i-button>
     </view>
   </view>
 
   <!-- <view class='gohome'>
     <image src='{{home_img}}' bindtap="tapName"></image>
   </view> -->
+<button bindtap='goToPromotion'  wx:if="{{is_promoter==0}}" class='promotionBtn'>赚</button>
 
-<view class='promotionBtn'>赚</view>
+<button   wx:if="{{is_promoter==1}}" open-type="share" class='promotionBtn'>赚</button>
 </view>

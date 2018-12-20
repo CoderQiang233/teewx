@@ -12,7 +12,8 @@ Page({
     visible2: false,
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    bePromoter:0
   },
   handleClose2() {
     this.setData({
@@ -25,7 +26,7 @@ Page({
     })
   },
 
-  onLoad: function() {
+  onLoad: function (options) {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -53,6 +54,12 @@ Page({
             hasUserInfo: true
           })
         }
+      })
+    }
+    if (options.from){
+      var from = options.from;
+      this.setData({
+        from: from
       })
     }
   },
@@ -99,7 +106,7 @@ Page({
               wx.navigateTo({
                 
               
-                url: '../PhoneVerification/PhoneVerification',
+                url: '../PhoneVerification/PhoneVerification?from=' + _this.data.from,
               })
             }
           })

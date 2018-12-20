@@ -18,6 +18,7 @@ Page({
     product: {},
     count: 1,
     user:false,
+    is_promoter:0
   },
 //点击立即购买
   goToOrderSubmit(){
@@ -55,7 +56,7 @@ Page({
       this.setData({
         id: options.id
       })
-      if (promoterId){
+      if (options.promoterId){
        var promoter={
          'product': options.id,
          'promoterId': promoterId
@@ -104,7 +105,9 @@ Page({
         console.log(rs);
         if (rs.data.data.code == 1) {
           that.setData({
-            user: true
+            user: true,
+            is_promoter: rs.data.data.info.is_promoter,
+            member_id:rs.data.data.info.id
           })
         }else{
           that.setData({
@@ -146,6 +149,28 @@ Page({
       count: detail.value
     })
   },
+
+  // 点击推广按钮
+  goToPromotion:function(){
+    console.log(123)
+    if(this.data.user){
+      if(this.data.is_promoter==1){
+// 用户为推客
+        console.log(233)
+        this.onShareAppMessage;
+      }else{
+// 用户非推客
+        wx.navigateTo({
+          url: '/pages/PromotionRules/PromotionRules',
+        })
+      }
+    }else{
+      // 用户未注册
+      wx.navigateTo({
+        url: '/pages/PromotionRules/PromotionRules',
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -178,7 +203,26 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    if(this.data.user){
+      if(this.data.is_promoter==1){
+        return {
+          title: this.data.product.name,
+          path: '/pages/Product/Product?id=' + this.data.product.product_id +'&promoterId='+this.data.member_id
+        }
+      }else{
+        return {
+          title: this.data.product.name,
+          path: '/pages/Product/Product?id=' + this.data.product.product_id 
+        }
+      }
+      
+    }else{
+      return {
+        title: this.data.product.name,
+        path: '/pages/Product/Product?id=' + this.data.product.product_id
+      }
+    }
+      
   },
 
 

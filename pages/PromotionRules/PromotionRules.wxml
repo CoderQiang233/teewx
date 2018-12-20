@@ -1,2 +1,13 @@
 <!--pages/PromotionRules/PromotionRules.wxml-->
-<text>pages/PromotionRules/PromotionRules.wxml</text>
+<view class='page'>
+<view class='ruleImg'>
+<image mode='widthFix' src='{{imagepath}}/image/PromotionRules.png'></image>
+</view>
+<view class='joinBtnBox' wx:if="{{is_promoter==0}}">
+<view class='joinBtn'>
+<i-button inline="{{true}}" long="true" i-class="joinbtn_1_right"  bindtap='joinPromotion'>立即加入</i-button>
+</view>
+  
+</view>
+</view>
+<van-dialog id="van-dialog" />

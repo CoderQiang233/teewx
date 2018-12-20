@@ -1,1 +1,50 @@
 /* pages/PromotionRules/PromotionRules.wxss */
+.page{
+  width: 100%;
+  min-height: 100%;
+  background-color: white;
+  padding-bottom: 50px;
+}
+.ruleImg{
+  width: 100%;
+}
+.ruleImg image{
+  width: 100%
+}
+.joinBtnBox{
+  display: block;
+    z-index: 100;
+    position: fixed;
+    bottom: 0px;
+    height: 50px;
+    background-color: #fff;
+    width: 100%;
+}
+.joinBtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: inherit;
+}
+.joinbtn_1_right{
+  height: 100%;
+  display: block;
+  flex: 1;
+  background-color: #f44 !important;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+}
+.joinBtn i-button{
+  width: 100%;
+  height: 100%;
+}
+.joinBtn button{
+  width: 100%;
+  height: 100%;
+  background-color: #f44 !important;
+  color: #fff !important;
+  font-size: 18px;
+  line-height: 50px;
+}

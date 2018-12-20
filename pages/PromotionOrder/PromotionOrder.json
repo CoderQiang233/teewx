@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "推广订单"
+  "navigationBarTitleText": "推广订单",
+  "usingComponents": {
+    "i-load-more": "../../iview/load-more/index"
+  }
 }

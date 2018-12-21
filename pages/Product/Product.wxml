@@ -45,3 +45,4 @@
 
 <button   wx:if="{{is_promoter==1}}" open-type="share" class='promotionBtn'>赚</button>
 </view>
+

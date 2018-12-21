@@ -15,6 +15,8 @@ Page({
     visible1:false,
     visible2: false,
     order_id:'',
+    loading: true,
+    show: true,
   },
 
   /**
@@ -39,6 +41,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      loading: true,
+      show: true,
+    })
     this.getAllorderList(this.data.current)
 
   
@@ -60,12 +66,24 @@ Page({
           'content-type': 'application/x-www-form-urlencoded' // 默认值
         },
         success(res) {
-          console.log(res.data, "我是全部的列表")
-         
           that.setData({
-            message: res.data.data.info
+            loading: false,
+            show: true,
           })
+          if(res.data.data.code==1){
+            console.log(res.data, "我是全部的列表")
 
+            that.setData({
+              message: res.data.data.info
+            })
+            that.setData({
+              show: false,
+            })
+          }else{
+            that.setData({
+              show: true,
+            })
+          }
         }
       })
     } else {      //各状态的订单列表
@@ -82,12 +100,23 @@ Page({
           'content-type': 'application/x-www-form-urlencoded' // 默认值
         },
         success(res) {
-          console.log(res.data, "我是第" + that.data.current)
           that.setData({
-            message: res.data.data.info,
-
+            loading: false,
+            show: true,
           })
-
+          console.log(res.data, "我是第" + that.data.current)
+          if(res.data.data.code==1){
+            that.setData({
+              show: false,
+            })
+            that.setData({
+              message: res.data.data.info,
+            })
+          }else{
+            that.setData({
+              show: true,
+            })
+          }
         }
       })
     }

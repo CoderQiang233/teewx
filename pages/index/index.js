@@ -73,6 +73,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
+        console.log(res)
         _this.setData({
           indexModules: res.data.data.list
         })

@@ -6,7 +6,7 @@
     <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
       <block wx:for="{{banner}}" wx:for-index="index">
         <swiper-item>
-          <image src="{{imagepath + item.path}}" class="slide-image" mode="aspectFill" />
+          <image src="{{imagepath + item.path}}" class="slide-image" mode="widthFix" />
         </swiper-item>
       </block>
     </swiper>

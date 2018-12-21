@@ -106,7 +106,7 @@
     </view>
   </view>
 </button>
-<view class='person_address' >
+<!-- <view class='person_address' >
   <view class='person_address_box' style='border:0'>
     <view class='left'>
       <view class='icon'>
@@ -118,7 +118,7 @@
       <i-icon type="enter" size="20" color="#80848f" />
     </view>
   </view>
-</view>
+</view> -->
 <!-- <view class='profit'>
   <view class='top'>
     <view class='top_top'>当前累计收益(元)</view>

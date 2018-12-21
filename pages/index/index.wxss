@@ -20,11 +20,11 @@
   margin-top: 200px;
 }
 .scroll{
-  height: 30%;
+  height: 40%;
 width: 100%;
 }
 .swiper {
-  height: 400rpx;
+  height: 580rpx;
   width: 100%;
 }
 .swiper image {

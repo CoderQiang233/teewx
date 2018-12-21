@@ -1,308 +1,331 @@
 // pages/NewAddress/NewAddress.js
 const app = getApp()
 var basepath = app.basePath;
-const { $Toast } = require('../../iview/base/index');
+const {
+  $Toast
+} = require('../../iview/base/index');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    //收货地址
     region: ['北京市', '北京市', '东城区'],
-    switch1: 0,
-    name:'',
-    phone:'',
-    address:'',
-    detailAddress:'',
+    Name:"",
+    Phone:'',
+    AddressDetail:'',
     status:0,
-    userid:'',
-    openid:'',
-    //修改是1  插入是0
-    write:0,
-    session3rd:'',
-    //用户id
-    menberid:'',
-    name:'',
-    phone:'',
-    detail:''
-  },
-  //获取收货人姓名
-  name_input:function(e){
- 
-   this.data.name =e.detail.value;
-    console.log(this.data.name);
-  },
-  //获取手机号
-  tel_input: function (e) {
-
-    this.data.phone = e.detail.value;
-    console.log(this.data.phone);
-  },
-  //获得详细地址
-  detailAddress_input:function(e){
-     this.data.detailAddress=e.detail.value
-    console.log(this.data.detailAddress);
-    this.setData({
-      detail: this.data.detailAddress
-    })
-  },
-  //点击保存按钮
-  commite(){
-    console.log(this.data.region[1])
-    //验证填写信息
+    type:1,//1是新增2是修改
+    member_id:0,
+    addressid:'',
+    switch1:false,
+    wxaddress:'',
   
-    if (this.data.name.length == 0) {
-      console.log("请输入姓名")
-      $Toast({
-        content: '姓名输入错误',
-        type: 'warning'
-      });
-      return
-    }   
-    if (this.data.phone.length != 11) {
-      console.log("手机号输入错误")
-      $Toast({
-        content: '手机号错误',
-        type: 'warning'
-      });
-      return
-    }
-    // if (this.data.detailAddress.length == 0) {
-    //   console.log("详细地址错误")
-    //   $Toast({
-    //     content: '详细地址错误',
-    //     type: 'warning'
-    //   });
-    //   return
-    // } 
-    // 发起请求存入数据库
-    //插入新地址 
-   if(this.data.write == 0){
-     console.log("插入地址")
-     console.log(this.data.detailAddress)
-     wx.request({
-       url: basepath, // 仅为示例，并非真实的接口地址
-       data: {
-         service: 'MyAddresss.InsertMyAddresss',
-         consignee_name: this.data.name,
-         address: this.data.detailAddress,
-         consignee_phone: this.data.phone,
-         member_id: this.data.userid,
-         openid: this.data.openid,
-         city: this.data.region[1],
-         county: this.data.region[2],
-         province: this.data.region[0],
-         state: this.data.status,
-         session3rd:this.data.session3rd,
-       },
-       dataType: 'json',
-       method: 'POST',
-       header: {
-         'content-type': 'application/x-www-form-urlencoded'
-       },
-       success(res) {
-         console.log(res.data)
-         if(res.data.data.code ==1){
-          //  wx.setStorageSync("id", data)
-           wx.navigateBack({
+  },
+  
+  //点击保存按钮
+  commite() {
+    this.checkInput().then((res)=>{
+      if(res){
+        if(this.data.type==1){
+          this.insertAddress();
+        } 
+        if(this.data.type==2){
+         this.updataAddress();
+        }
+      }
+    })
 
-           })
-           
-         }else{ 
-           $Toast({
-             content: '保存失败，请检查填写是否正确',
-             type: 'warning'
-           });
-         }
-        
-         
-       }
-     })
-   }else{
-     console.log("修改地址")
-     console.log(this.data.detail)
-     console.log(this.data.detailAddress)
-     wx.request({
-       url: basepath, // 仅为示例，并非真实的接口地址
-       data: {
-         service: 'MyAddresss.UpdateAddressById',
-         id: this.data.menberid,
-         consignee_name: this.data.name,
-         address: this.data.detail,
-         consignee_phone: this.data.phone,
-         member_id: this.data.userid,
-         city: this.data.region[1],
-         county: this.data.region[2],
-         province: this.data.region[0],
-         state: this.data.status
-       },
-       dataType: 'json',
-       method: 'POST',
-       header: {
-         'content-type': 'application/x-www-form-urlencoded'
-       },
-       success(res) {
-         console.log(res.data)
-         if (res.data.ret == 400) {
-           $Toast({
-             content: '保存失败，请检查填写是否正确',
-             type: 'warning'
-           });
-         } else {
-           wx.navigateBack({
-             id:1
-           })
-         }
-       }
-     })
-   }
-    // if()
- 
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-   var that=this
-    var info = []
-    info=(wx.getStorageSync("address"))
-    console.log(info)
-    if(options.title==1){
+  onLoad: function(options) {
+    if (options.type){
       this.setData({
-        name: info.consignee_name,
-        phone: info.consignee_phone,
-
-        region: [info.province, info.city, info.county],
-        detail: info.address,
-
+        type: options.type,
       })
-
-      if (options.state == 0) {
-        that.setData({
-          switch1: false,
-          status : 0
-        })
-
-      } else {
-        that.setData({
-          switch1: true,
-          status : 1
-        })
-      }
-     
     }
-    
-
-    this.data.write = options.title
-    console.log(options)
-    this.data.menberid = options.addressid
-    console.log(this.data.menberid)
-    
-   //获取用户的openid
-   var that =this
-    wx.getStorage({
-      key: 'session',
-      success: function (res) {
-        that.setData({
-          session3rd :res.data
-        })
-         
-        console.log(res)
-        wx.request({
-          url: basepath, // 仅为示例，并非真实的接口地址
-          data: {
-            service: 'login.Index',
-            session3rd: res.data
-          },
-          dataType: 'json',
-          method: 'POST',
-          header: {
-            'Content-type': 'application/x-www-form-urlencoded' // 默认值
-          },
-          success(res) {
-            console.log(res)
-            that.data.userid = res.data.data.info.id;
-            that.data.openid = res.data.data.info.openid
-          }
-        })
-      }
-    })
+    if (options.addressid){
+      this.setData({
+        type: 2,
+        addressid: options.addressid,
+      })
+    }
+    if (options.wxaddress){
+      console.log(JSON.parse(options.wxaddress));
+      let wxaddress = JSON.parse(options.wxaddress);
+      this.setData({
+        type: 1,
+        region: [wxaddress.provinceName, wxaddress.cityName, wxaddress.countyName],
+        Name: wxaddress.userName,
+        Phone: wxaddress.telNumber,
+        AddressDetail: wxaddress.detailInfo,
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function() {
+    this.getUserId();
+    if(this.data.addressid!=''){
+      this.getaddress();
+    }
+
+  },
+  //收货人姓名
+  setName(e){
+    this.setData({
+      Name: e.detail.value
+    })
+  },
+  //手机号
+  setPhone(e) {
+    this.setData({
+     Phone: e.detail.value
+    })
+  },
+  //详细地址
+  setAddressDetail(e) {
+    this.setData({
+      AddressDetail: e.detail.value
+    })
+  },
+
+  //获取用户id
+  getUserId() {
+    var that = this
+    let session = wx.getStorageSync('session');
+    wx.request({
+      url: basepath,
+      data: {
+        service: 'login.Index',
+        session3rd: session
+      },
+      dataType: 'json',
+      method: 'POST',
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        let info = res.data.data.info;
+        if(res.data.data.code==1){
+          that.setData({
+            member_id: info.id,
+          })
+        }
+      }
+    })
   },
 
   //省市区选择器选择方法
   bindRegionChange(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
-    console.log(e)
     this.setData({
       region: e.detail.value
     })
   },
   //默认地址开关
-  onChange(event) {
-    var that =this
-    const detail = event.detail;
+  onChange(e) {
     this.setData({
-      'switch1': detail.value
+      switch1: e.detail.value,
+      status: e.detail.value==true?1:0,
     })
-    console.log(this.data.switch1)
-    if (this.data.switch1){
-      that.data.status =1
-      console.log(this.data.status)
-    }else{
-      that.data.status=0
-      console.log(this.data.status)
-    }
-    
   },
+  //验证方法
+  checkInput(){
+    return new Promise((res, rej)=>{
+      let result=true;
+      if(this.data.Name.length==0){
+        $Toast({
+          content: '请填写收货人姓名',
+          type: 'warning',
+          mask:false,
+        });
+        result=false;
+      }
+      var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+      if (!myreg.test(this.data.Phone)) {
+        $Toast({
+          content: '请填写正确的手机号',
+          type: 'warning',
+          mask: false,
+        });
+        result = false;
+      }
+      if (this.data.AddressDetail.length == 0) {
+        $Toast({
+          content: '请填写详细收货地址',
+          type: 'warning',
+          mask: false,
+        });
+        result = false;
+      }
+      res(result);
+    })
+  },
+  //新增地址接口调用
+  insertAddress(){
+    var that=this;
+    var data=that.data;
+    wx.request({
+      url: basepath,
+      data: {
+        service: 'MyAddresss.insertMyAddresss',
+        session3rd: wx.getStorageSync('session'),
+        consignee_name: data.Name,
+        address:data.AddressDetail,
+        consignee_phone:data.Phone,
+        member_id:data.member_id,
+        city: data.region['1'],
+        county: data.region['2'],
+        province:data.region['0'],
+        state: data.status,
+
+      },
+      dataType: 'json',
+      method: 'POST',
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        console.log(res)
+        if(res.data.data.code==1){
+          wx.redirectTo({
+            url: '/pages/AddressList/AddressList',
+          })
+        }
+
+      }
+    })
+  },
+  //获取地址信息
+  getaddress(){
+    var that = this;
+    var data = that.data;
+    wx.request({
+      url: basepath,
+      data: {
+        service: 'MyAddresss.findAddressById',
+        id: data.addressid
+      },
+      dataType: 'json',
+      method: 'POST',
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        console.log(res)
+        let info=res.data.data.info;
+        if (res.data.data.code == 1) {
+          that.setData({
+            region: [info.province, info.city, info.county],
+            Name: info.consignee_name,
+            Phone: info.consignee_phone,
+            AddressDetail: info.address,
+            switch1: info.state==1?true:false,
+          })
+        }
+
+      }
+    })
+  },
+  //修改地址接口调用
+  updataAddress(){
+    var that = this;
+    var data = that.data;
+    wx.request({
+      url: basepath,
+      data: {
+        service: 'MyAddresss.updateAddressById',
+        id:data.addressid,
+        consignee_name: data.Name,
+        address: data.AddressDetail,
+        consignee_phone: data.Phone,
+        member_id: data.member_id,
+        city: data.region['1'],
+        county: data.region['2'],
+        province: data.region['0'],
+        state: data.status,
+
+      },
+      dataType: 'json',
+      method: 'POST',
+      header: {
+        'Content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        console.log(res)
+        if (res.data.data.code == 1) {
+          wx.navigateBack({
+            delta: 1
+          })
+        }
+      }
+    })
+  },
+  //一键导入微信地址
+  chooseWxAddress(){
+    let that=this;
+    wx.chooseAddress({
+      success(res) {
+        let wxaddress=res;
+        that.setData({
+          type: 1,
+          region: [wxaddress.provinceName, wxaddress.cityName, wxaddress.countyName],
+          Name: wxaddress.userName,
+          Phone: wxaddress.telNumber,
+          AddressDetail: wxaddress.detailInfo,
+        })
+      }
+    })
+  },
+
+
 
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

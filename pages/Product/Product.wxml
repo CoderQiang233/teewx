@@ -32,10 +32,18 @@
     <!-- <image src='{{product.detail}}' mode="widthFix" lazy-load="{{true}}"></image> -->
   </view>
 
-  <view class='paybtn'>
-    <view class='paybtn_1'>
-      <i-button inline="{{true}}" long="true" i-class="paybtn_1_right" open-type="getUserInfo" bind:getuserinfo='goToOrderSubmit'>立即购买  </i-button>
+  <view class='paybtnbox'>
+  <view class='paybtnbox_left'>
+      <view class='toindex' catchtap='toindex'>
+        <view class='top'><i-icon type="homepage" size='28' color='#8c8c8c'/></view>
+        <view class='bottom'>首页</view>
+      </view>
+      <button class='toindex' open-type='contact'>
+        <view class='top'><i-icon type="message" size='28' color='#8c8c8c'/></view>
+        <view class='bottom'>客服</view>
+      </button>
     </view>
+      <button  class="paybtn" open-type="getUserInfo" bind:getuserinfo='goToOrderSubmit'>立即购买  </button>
   </view>
 
   <!-- <view class='gohome'>
@@ -45,4 +53,3 @@
 
 <button   wx:if="{{is_promoter==1}}" open-type="share" class='promotionBtn'>赚</button>
 </view>
-

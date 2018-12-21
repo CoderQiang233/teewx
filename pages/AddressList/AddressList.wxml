@@ -3,7 +3,7 @@
 
 <image src='../../images/PlaceOrder/caitiao5.png' class='caitiao'></image>
 <!-- 地址列表--整体父元素-->
-<view class='address_box' wx:for="{{address}}">
+<view class='address_box' wx:for="{{address}}" wx:key="{{index}}">
 <!-- 地址列表--单行-->
   <view class='address_list' catchtap='backview'id="{{item.id}}">
     <view class='address_list_left'>
@@ -23,7 +23,7 @@
 
     </view>
      <!-- <navigator url="../NewAddress/NewAddress?title=1&addressid={{item.id}}" > -->
-    <view class='address_list_right' catchtap='gotoNewAddress' data-title='1'  data-addressid='{{item.id}}' data-statue='{{item.state}}'>
+    <view class='address_list_right' catchtap='gotoNewAddress'   data-addressid='{{item.id}}'>
       <i-icon type="editor" size="24" color="#8c8c8c" />
     </view>
     <!-- </navigator> -->
@@ -32,10 +32,10 @@
 </view>
 <!-- 底部按钮 -->
 <view class='button_box'>
- <navigator url="../NewAddress/NewAddress?title=0" >
+ <navigator url="../NewAddress/NewAddress?type=1" >
   <view class='add_address'>+新建地址</view>
   </navigator>
-  <view class='add_address2'>
+  <view class='add_address2' catchtap='checkaddress'>
     <image src='../../images/Address/weixinicon.png'></image>
     一键导入微信地址
   </view>

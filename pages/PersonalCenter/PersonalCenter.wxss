@@ -235,7 +235,7 @@ button::after{
 
 .button_section_content .title {
   width: 100%;
-  font-size: 32rpx;
+  font-size: 30rpx;
   text-align: center;
 }
 

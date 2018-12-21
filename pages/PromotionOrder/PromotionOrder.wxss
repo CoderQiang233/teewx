@@ -105,3 +105,6 @@ page {
 .title2{
 color: #999;
 }
+.zanwu{
+  margin-top: 80rpx !important;
+}

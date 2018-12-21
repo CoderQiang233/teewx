@@ -48,5 +48,5 @@
 <i-modal title="是否取消订单？" visible="{{ visible2 }}" bind:ok="handleOK2" bind:cancel="handleClose1">
 </i-modal>
 
-<i-load-more tip="暂无数据" loading="{{ loading }}" wx:if="{{show}}"/>
+<i-load-more tip="暂无数据" i-class="zanwu" loading="{{ loading }}" wx:if="{{show}}"/>
 <i-toast id="toast" />

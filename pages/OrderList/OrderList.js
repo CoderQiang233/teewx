@@ -81,6 +81,7 @@ Page({
             })
           }else{
             that.setData({
+              message: res.data.data.info,
               show: true,
             })
           }
@@ -114,6 +115,7 @@ Page({
             })
           }else{
             that.setData({
+              message: res.data.data.info,
               show: true,
             })
           }

@@ -4,6 +4,7 @@ view {
 
 page {
   background-color: #F2F1F6;
+  height: 600px;
 }
 
 .orderdetail {
@@ -101,4 +102,7 @@ page {
   align-items: center;
   justify-content: center;
   float: right;
+}
+.zanwu{
+ margin-top: 80rpx !important;
 }

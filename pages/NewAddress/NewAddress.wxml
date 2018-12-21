@@ -1,7 +1,7 @@
 <view class="edit_box">
 
-  <input class='name' placeholder='收货人姓名' bindinput='name_input' value='{{name}}'></input>
-  <input class='name' placeholder='手机号' type="number" maxlength='11' bindinput='tel_input' value='{{phone}}'></input>
+  <input class='name' placeholder='收货人姓名' bindinput='setName' value='{{Name}}'></input>
+  <input class='name' placeholder='手机号' type="number" maxlength='11' bindinput='setPhone' value='{{Phone}}'></input>
   <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
     <view class="picker">
       {{region[0]}} {{region[1]}} {{region[2]}}
@@ -9,7 +9,7 @@
     </view>
   </picker>
 
-  <input class='name' placeholder='详细地址' bindinput='detailAddress_input' value='{{detail}}'></input>
+  <input class='name' placeholder='详细地址' bindinput='setAddressDetail' value='{{AddressDetail}}'></input>
 
   <view class='button_box'>
     <view class='button_left'>
@@ -21,7 +21,7 @@
         <view slot="close">否</view>
       </i-switch>
     </view>
-    <view class='button_right'>
+    <view class='button_right' catchtap='chooseWxAddress'>
       <image src='../../images/Address/weixinicon.png' class='wx_icon'></image>
       一键导入微信地址>
     </view>

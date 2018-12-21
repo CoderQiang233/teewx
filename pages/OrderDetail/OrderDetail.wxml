@@ -1,4 +1,4 @@
-<view class='address'>
+<view class='address' wx:if="{{product}}">
   <view class='address_top'>
     <view class='address_name'>{{product.receiver_name}}</view>
     <view class='address_phone'>{{product.receiver_phone}}</view>
@@ -6,7 +6,7 @@
   <view class='address_bottom'>{{product.shipping_address}}</view>
 </view>
 
-<view class='order'>
+<view class='order' wx:if="{{product}}">
   <view class='order_top'>
     <view class='order_title'>订单编号：</view>
     <view class='order_content'>{{product.pay_id}}</view>
@@ -16,6 +16,7 @@
     <view class='order_content'> {{product.create_time}}</view>
   </view>
 </view>
+
 
 <view class='shop_content' wx:for="{{product.product}}" wx:key="{{index}}">
   <image class='shop_image' src='{{imagepath + item.first_picture}}'></image>
@@ -29,7 +30,22 @@
   </view>
 </view>
 
-<view class='order'>
+<view class='order' wx:if="{{product.pay >= 2}}">
+  <view class='order_bottom'>
+    <view class='order_title'>快递名称：</view>
+    <view class='order_content'> {{product.express.express_name}}</view>
+  </view>
+  <view class='order_bottom'>
+    <view class='order_title'>快递单号：</view>
+    <view class='order_content'> {{product.express.express_number}}</view>
+  </view>
+  <view class='order_bottom'>
+    <view class='order_title'>发货时间：</view>
+    <view class='order_content'> {{product.express.ship_time}}</view>
+  </view>
+</view>
+
+<view class='order' wx:if="{{product}}">
   <view class='order_bottom'>
     <view class='order_title'>合计总价：</view>
     <view class='order_content'> ￥{{product.total}}</view>
